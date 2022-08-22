@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>517有负环最短路径题解 | Test19124の小窝</title>
+        <meta name="author" content="test19124">
+        <meta name="description" content="QwQ~">
+        <meta name="keywords" content="test19124,lizishuo,test19124の小窝">
+        <link rel="icon" href="/img/avatar.png">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.1.1/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+    <meta name="generator" content="Hexo 5.4.2"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">test19124の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/article/guan-yu-zhe-ge-bo-ke">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;关于</span>
+        </a>
+        
+        <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;资料</span>
+        </a>
+        
+        <a href="/tags/%E9%A2%98%E8%A7%A3">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;题解</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;test19124の小窝</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                </div>
+            </a>
+            
+            <a href="article/guan-yu-zhe-ge-bo-ke">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">关于</div>
+                </div>
+            </a>
+            
+            <a href="tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">资料</div>
+                </div>
+            </a>
+            
+            <a href="tags/%E9%A2%98%E8%A7%A3">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">题解</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>517有负环最短路径题解 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/8/6
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/编程/" style="color: #03a9f4">
+                    编程
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/题解/" style="color: #ff7d73">
+                    题解
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/517普及组/" style="color: #03a9f4">
+                    517普及组
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h1 id="有负环最短路径-第十课：最短路径-【中级班】517编程普及组"><a href="#有负环最短路径-第十课：最短路径-【中级班】517编程普及组" class="headerlink" title="有负环最短路径-第十课：最短路径-【中级班】517编程普及组"></a>有负环最短路径-第十课：最短路径-【中级班】517编程普及组</h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><blockquote>
+<p>给定一个有向图，求1到n的最短路径。<br>可以判断图中是否有负环。 </p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><blockquote>
+<p>第一行两个整数n和m，表示点数和边数。<br>接下来m行，每行3个整数，表示一条有向边。 </p>
+</blockquote>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><blockquote>
+<p>如果图中有负环，输出circle<br>如果没有负环，但是从1无法到达n，输出 can’t arrive!<br>否则输出 1到n的最短距离 </p>
+</blockquote>
+<h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入#1"></a>输入#1</h3><pre><code class="txt">3 3
+1 3 3
+1 2 1
+2 3 1
+</code></pre>
+<h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出#1"></a>输出#1</h3><pre><code class="txt">2
+</code></pre>
+<h3 id="输入-2"><a href="#输入-2" class="headerlink" title="输入#2"></a>输入#2</h3><pre><code class="txt">3 3
+1 2 1
+2 1 -2
+2 3 1
+</code></pre>
+<h3 id="输出-2"><a href="#输出-2" class="headerlink" title="输出#2"></a>输出#2</h3><pre><code class="txt">circle
+</code></pre>
+<h3 id="输入-3"><a href="#输入-3" class="headerlink" title="输入#3"></a>输入#3</h3><pre><code class="txt">3 2
+1 2 1
+2 1 1
+</code></pre>
+<h3 id="输出-3"><a href="#输出-3" class="headerlink" title="输出#3"></a>输出#3</h3><pre><code class="txt">can&#39;t arrive!
+</code></pre>
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><blockquote>
+<p>n≤200<br>m≤2000 </p>
+</blockquote>
+<hr>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这题就是标准负环最短路</p>
+<h2 id="易错点"><a href="#易错点" class="headerlink" title="易错点"></a>易错点</h2><ol>
+<li>中转边必须有边才能转移：<code>if(g[u][i]!=998244353&amp;&amp;g[i][v]!=998244353)</code></li>
+<li><code>g[u][v]</code> 可以等于 <code>998244353</code></li>
+</ol>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int g[210][210];
+
+int main() &#123;
+  int n,m;
+  cin&gt;&gt;n&gt;&gt;m;
+  for(int i=1; i&lt;=n; i++) &#123;
+    for(int j=1; j&lt;=n; j++) &#123;
+      if(i!=j) &#123;
+        g[i][j]=998244353;
+      &#125;
+    &#125;
+  &#125;
+  int u,v,w;
+  for(int i=1; i&lt;=m; i++) &#123;
+    cin&gt;&gt;u&gt;&gt;v&gt;&gt;w;
+    g[u][v]=min(w,g[u][v]);
+  &#125;
+  for(int i=1; i&lt;=n; i++) &#123;
+    for(int u=1; u&lt;=n; u++) &#123;
+      for(int v=1; v&lt;=n; v++) &#123;
+        if(g[u][i]!=998244353&amp;&amp;g[i][v]!=998244353) &#123;
+          if(g[u][i]+g[i][v]&lt;g[u][v]) &#123;
+            g[u][v]=g[u][i]+g[i][v];
+          &#125;
+        &#125;
+      &#125;
+      if(g[u][u]&lt;0) &#123;
+        cout&lt;&lt;&quot;circle&quot;&lt;&lt;endl;
+        return 0;
+      &#125;
+    &#125;
+  &#125;
+  if(g[1][n]==998244353) &#123;
+    cout&lt;&lt;&quot;can&#39;t arrive!\n&quot;;
+  &#125; else &#123;
+    cout&lt;&lt;g[1][n]&lt;&lt;&quot;\n&quot;;
+  &#125;
+  return 0;
+&#125;
+</code></pre>
+
+    </div>
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2019 - 2022 test19124の小窝
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @test19124
+        </div>
+        <div></div>
+        <div>由 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 进行驱动 & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX</a> 主题</div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+
+        <!-- 看板娘 -->
+        <script src="/js/pixi.min.js"></script>
+        <script src="/js/live2d.min.js"></script>
+        <script src="/css/live2d.css"></script>
+        <div id="L2dCanvas"></div>
+        <script>
+            var modell = ["lafei_4","dujiaoshou_4","dujiaoshou_4"];
+            var v = new Viewer({
+                width: 240,
+                height: 325,
+                right: "0",
+                bottom: "0",
+                basePath: "/model",
+                role: modell[Math.floor(Math.random()*10)%3],
+                mobile: true,
+            });
+        </script>
+
+        <!-- 流星背景特效 -->
+        <canvas id="background" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1" ></canvas>
+        <script src="/js/background.js"></script>
+    </body>
+</html>

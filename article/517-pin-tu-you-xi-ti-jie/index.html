@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>517拼图游戏题解 | Test19124の小窝</title>
+        <meta name="author" content="test19124">
+        <meta name="description" content="QwQ~">
+        <meta name="keywords" content="test19124,lizishuo,test19124の小窝">
+        <link rel="icon" href="/img/avatar.png">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.1.1/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+    <meta name="generator" content="Hexo 5.4.2"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">test19124の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/article/guan-yu-zhe-ge-bo-ke">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;关于</span>
+        </a>
+        
+        <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;资料</span>
+        </a>
+        
+        <a href="/tags/%E9%A2%98%E8%A7%A3">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;题解</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;test19124の小窝</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                </div>
+            </a>
+            
+            <a href="article/guan-yu-zhe-ge-bo-ke">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">关于</div>
+                </div>
+            </a>
+            
+            <a href="tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">资料</div>
+                </div>
+            </a>
+            
+            <a href="tags/%E9%A2%98%E8%A7%A3">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">题解</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>517拼图游戏题解 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/8/1
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/编程/" style="color: #ffa2c4">
+                    编程
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/题解/" style="color: #ffa2c4">
+                    题解
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/517普及组/" style="color: #ff7d73">
+                    517普及组
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h1 id="拼图游戏-第四课：广搜-【中级班】517编程普及组"><a href="#拼图游戏-第四课：广搜-【中级班】517编程普及组" class="headerlink" title="拼图游戏-第四课：广搜-【中级班】517编程普及组"></a>拼图游戏-第四课：广搜-【中级班】517编程普及组</h1><p><img src="https://i.loli.net/2021/07/25/4xMjbA9NZi2sHVD.png" alt="拼图游戏-第四课：广搜-【中级班】517编程普及组"></p>
+<span id="more"></span>
+
+<pre><code class="c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int mod=1000007;
+int ji[1000010];
+int top;
+int me[1000010],to[1000010];
+
+int X[4]=&#123;0,1&#125;;
+int Y[4]=&#123;1,0&#125;;
+
+struct zb &#123;
+  int a[5][5];
+  int ans;
+&#125;;
+queue&lt;zb&gt;q;
+
+void out(int a[5][5]) &#123;
+  for(int i=1;i&lt;=3;i++) &#123;
+    for(int j=1;j&lt;=3;j++) &#123;
+      cout&lt;&lt;a[i][j];
+    &#125;
+    cout&lt;&lt;endl;
+  &#125;
+&#125;
+
+void outji() &#123;
+  cout&lt;&lt;top&lt;&lt;endl;
+  for(int i=0;i&lt;mod;i++) &#123;
+    if(ji[i]) &#123;
+      for(int j=ji[i];;j=to[j]) &#123;
+        cout&lt;&lt;me[j]&lt;&lt;&quot;--&gt;&quot;;
+        if(to[j]==0) &#123;
+          break;
+        &#125;
+      &#125;
+      cout&lt;&lt;ji[i]&lt;&lt;endl;
+    &#125;
+  &#125;
+&#125;
+
+int copy(int &amp;a,int b[5][5]) &#123;
+  a=0;
+  for(int i=1;i&lt;=3;i++) &#123;
+    for(int j=1;j&lt;=3;j++) &#123;
+      a=a*10+b[i][j];
+    &#125;
+  &#125;
+  return a;
+&#125;
+
+bool find(int x) &#123;
+  for(int i=ji[x%mod];to[i]!=0;i=to[i]) &#123;
+    if(me[i]==x) &#123;
+      return true;
+    &#125;
+  &#125;
+  return false;
+&#125;
+
+void in(int x) &#123;
+  if(ji[x%mod]==0) &#123;
+    top++;
+    ji[x%mod]=top;
+    me[top]=x;
+    return;
+  &#125;
+  for(int i=ji[x%mod];;i=to[i]) &#123;
+    if(to[i]==0) &#123;
+      top++;
+      to[i]=top;
+      me[top]=x;
+      return;
+    &#125;
+  &#125;
+&#125;
+
+zb push(int a[5][5],int ans) &#123;
+  zb x;
+  for(int i=1;i&lt;=3;i++) &#123;
+    for(int j=1;j&lt;=3;j++) &#123;
+      x.a[i][j]=a[i][j];
+    &#125;
+  &#125;
+  x.ans=ans;
+  q.push(x);
+  return x;
+&#125;
+
+int bfs(int a[5][5]) &#123;
+  
+  zb k;
+  int h;
+  
+  push(a,0);
+  in(copy(h,a));
+  
+  while(!q.empty()) &#123;
+    
+    k=q.front();
+    q.pop();
+    
+    copy(h,k.a);
+    if(h==12345678) &#123;
+      return k.ans;
+    &#125;
+
+    //cout&lt;&lt;k.ans&lt;&lt;endl;
+    //out(k.a);
+    
+    for(int x=1;x&lt;=3;x++) &#123;
+      for(int y=1;y&lt;=3;y++) &#123;
+        for(int i=0;i&lt;2;i++) &#123;
+          if(x+X[i]&gt;3||y+Y[i]&gt;3);
+          else &#123;
+            swap(k.a[x][y],k.a[x+X[i]][y+Y[i]]);
+            copy(h,k.a);
+            if(!find(h)) &#123;
+              in(h);
+              push(k.a,k.ans+1);
+            &#125;
+            swap(k.a[x][y],k.a[x+X[i]][y+Y[i]]);
+          &#125;
+        &#125;
+        /*
+        if(find()) &#123;
+          return;
+        &#125;
+        for(int i=0;i&lt;4;i++) &#123;
+          if(x+X[i]&lt;=0||y+Y[i]&lt;=0||x+X[i]&gt;3||y+Y[i]&gt;3||vis[x+X[i]][y+Y[i]]);
+          else &#123;
+            vis[x][y]=true;
+            dfs(x+X[i],y+Y[i]);
+            swap(a[x][y],a[x+X[i]][y+Y[i]]);
+            //cout&lt;&lt;&quot;swap &quot;&lt;&lt;a[x][y]&lt;&lt;&quot; and &quot;&lt;&lt;a[x+X[i]][y+Y[i]]&lt;&lt;endl;
+            dfs(x+X[i],y+Y[i],ansx+1);
+            swap(a[x][y],a[x+X[i]][y+Y[i]]);
+            vis[x][y]=false;
+          &#125;
+        &#125;
+        if(l==k) &#123;
+          l=q.back();
+          ans++;
+        &#125;
+        */
+      &#125;
+    &#125;
+    //outji();
+  &#125;
+  return 0;
+&#125;
+
+int main() &#123;
+  
+  int x;
+  int a[5][5];
+  
+  for(int i=1;i&lt;=3;i++) &#123;
+    cin&gt;&gt;x;
+    for(int j=3;j&gt;=1;j--) &#123;
+      a[i][j]=x%10;
+      x/=10;
+    &#125;
+  &#125;
+  
+  int ans;
+  copy(ans,a);
+  if(ans==12345678) &#123;
+    cout&lt;&lt;0&lt;&lt;endl;
+  &#125; else &#123;
+    cout&lt;&lt;bfs(a)&lt;&lt;endl;
+  &#125;
+  
+  return 0;
+&#125;
+</code></pre>
+
+    </div>
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2019 - 2022 test19124の小窝
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @test19124
+        </div>
+        <div></div>
+        <div>由 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 进行驱动 & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX</a> 主题</div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+
+        <!-- 看板娘 -->
+        <script src="/js/pixi.min.js"></script>
+        <script src="/js/live2d.min.js"></script>
+        <script src="/css/live2d.css"></script>
+        <div id="L2dCanvas"></div>
+        <script>
+            var modell = ["lafei_4","dujiaoshou_4","dujiaoshou_4"];
+            var v = new Viewer({
+                width: 240,
+                height: 325,
+                right: "0",
+                bottom: "0",
+                basePath: "/model",
+                role: modell[Math.floor(Math.random()*10)%3],
+                mobile: true,
+            });
+        </script>
+
+        <!-- 流星背景特效 -->
+        <canvas id="background" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1" ></canvas>
+        <script src="/js/background.js"></script>
+    </body>
+</html>

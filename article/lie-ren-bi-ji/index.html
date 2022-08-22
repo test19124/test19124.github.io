@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>猎人笔记 | Test19124の小窝</title>
+        <meta name="author" content="test19124">
+        <meta name="description" content="QwQ~">
+        <meta name="keywords" content="test19124,lizishuo,test19124の小窝">
+        <link rel="icon" href="/img/avatar.png">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.1.1/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+    <meta name="generator" content="Hexo 5.4.2"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">test19124の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/article/guan-yu-zhe-ge-bo-ke">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;关于</span>
+        </a>
+        
+        <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;资料</span>
+        </a>
+        
+        <a href="/tags/%E9%A2%98%E8%A7%A3">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;题解</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;test19124の小窝</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                </div>
+            </a>
+            
+            <a href="article/guan-yu-zhe-ge-bo-ke">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">关于</div>
+                </div>
+            </a>
+            
+            <a href="tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">资料</div>
+                </div>
+            </a>
+            
+            <a href="tags/%E9%A2%98%E8%A7%A3">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">题解</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>猎人笔记 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2020/12/12
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/学习资料/" style="color: #ff7d73">
+                    学习资料
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/语文/" style="color: #ffa2c4">
+                    语文
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <h2 id="创作背景"><a href="#创作背景" class="headerlink" title="创作背景"></a>创作背景</h2><p>　　《猎人笔记》是19世纪40年代末50年代初问世的。这时正是俄国解放运动从贵族革命向资产阶级民主主义革命过渡的时期，是俄国社会生活处在大转变的历史时期。这一时期，俄国专制制度腐朽的本质更加暴露出来了，农奴制度的危机更加加深了。</p>
+<span id="more"></span>
+
+<p>　　从20年代起，俄国的农奴制度就进入了危机阶段，并且，这种危机在不断地加深着。资本主义在俄国逐渐地发展起来了。它猛烈地冲击着农奴制度，使农奴制度的经济逐渐解体了。应该说，农奴制经济的解体，是农奴制危机的根本原因。</p>
+<p>　　同时，农民反对农奴制度的斗争也在不断地加强着。据统计，从1826年到1850年，农民骚动达到了576次。此外，这时平民知识分子的革命家，正在逐渐代替着贵族革命家，参加革命运动的进步力量扩大了。屠格涅夫正是在俄国解放运动的深刻影响下创作了《猎人笔记》。</p>
+<h2 id="作品主题"><a href="#作品主题" class="headerlink" title="作品主题"></a>作品主题</h2><p>　　《猎人笔记》是一部借猎人出猎的见闻揭露沙皇专制制度下广大农奴遭受农奴主残酷奴役、处于水深火热生活中的纪实作品，它用活生生的事例向读者展示了俄国农奴制下广大农奴的悲惨生活。</p>
+<p>　　《猎人笔记》的可贵之处不仅在于暴露农奴制的黑暗与残酷，而且歌颂了劳动人民的优秀品德。作者没有以地主老爷的态度居高临下地看待农民，像以往许多作家那样把农民描写成愚昧无知、缺乏崇高品德、处于畜生一般状态、只是一些应当受到怜悯的对象。</p>
+<p>　　作者在本书中往往以朋友的身份出现，和农民一起打猎，平等地谈论农民的生活，通过敏锐的洞察力发现、描写这些普通劳动人民的许多优秀品质，表现出他深厚的人道主义和民主思想。</p>
+<p>　　作者把他的感情倾在这些普通劳动人民身上，他没有任何贵族的架子，而和这些普通的农村劳动者打成一片，这在贵族出身的作家中是极为难能可贵的。</p>
+<p>　　作品不仅写出了农民快乐的生存方式，而且描写了这些普通人身上的美好性情。那就是善良、正直、乐观。人的使命也是人的生命屑性的表现，善良、热情、正直、乐观等等都是符合生命的内在要求，而人们在大众生活表现了这样美好的人性，也体现生命的伦理价值观。</p>
+<p>　　所以，这也是衡量生命的一个重要的价值尺度。小说写了众多的普通农民，他们在接人待物所表现出的善良、热情的天性，在对生命认知方面的乐观，利他的心态都折射出美好的生命之光。</p>
+<p>　　屠格涅夫在这部短篇小说集中，主要是从生命的角度来写人物的活动及大自然优美的景物空间。每一个空间都有一个明确的生命要素，如植物的鲜活，动物的晃动，农民的善良、乐观，地主的衰败等等，这些要素是相互关联的，这一连串的空间也就构成了展示生命本体的一个完整的艺术世界。</p>
+<p>　　而且，从对大自然的书写到对人物的生动刻画。其空间转换也是有层次而又富有节奏的。另外，作者在艺术手法上也是富有变化的。</p>
+<p>　　他从正反两个方面来写，写农民及自然的美景是从正面着手，处处展现出鲜活、灵动、快乐的生命意识，追求一种宰相的生存模式，以此来体现人类生命的内在本质要求，而写乡村地主则是从反面写出了地主身上衰败的生命特征，揭示了其没落的生命意义。 </p>
+<h2 id="章节大意"><a href="#章节大意" class="headerlink" title="章节大意"></a>章节大意</h2><h3 id="《霍里和卡利内奇》"><a href="#《霍里和卡利内奇》" class="headerlink" title="《霍里和卡利内奇》"></a>《霍里和卡利内奇》</h3><p>　　“我”以猎人的身份访问瑞兹德林县，在旷野里结识了小地主鲍卢台金。我们先步行到了霍里的家，他的小儿子驾车送我们回鲍卢台金家过夜。第二天，“我”一个人出外打猎，傍晚时来到霍里家并在这住下。三天后，鲍卢台金派人来接“我”。次日，“我”离开了鲍卢台金先生家。</p>
+<h3 id="《叶尔莫莱和磨坊老板娘》"><a href="#《叶尔莫莱和磨坊老板娘》" class="headerlink" title="《叶尔莫莱和磨坊老板娘》"></a>《叶尔莫莱和磨坊老板娘》</h3><p>　　“我”带着雇佣的猎人叶尔摩莱，傍晚日落前在树林里“守猎”。为了第二天黎明日出前“守猎”，我们想在附近一个磨房里过夜。磨房主安排我们住在距离磨房很近的小棚里。磨房主还让他的妻子出来招待我们。</p>
+<h3 id="《莓泉》"><a href="#《莓泉》" class="headerlink" title="《莓泉》"></a>《莓泉》</h3><p>　　在初秋八月的一天，“我”带着猎犬来到伊斯塔河畔打猎。在“草莓甘泉”喝水时，见到了“我”早就认识的那两个农民：斯交布什卡和米哈伊洛·萨魏里甫。从后者口里，读者知道那个曾经风光，后来逐渐败落的伯爵的故事。</p>
+<h3 id="《县里的医生》"><a href="#《县里的医生》" class="headerlink" title="《县里的医生》"></a>《县里的医生》</h3><p>　　除了第一段，全文都是这位“县医”的自述：他对“我”讲述他本人在给一个小地主家的姑娘治病过程中亲身经历的一段终生难忘的恋爱故事。</p>
+<h3 id="《我的邻居拉季洛夫》"><a href="#《我的邻居拉季洛夫》" class="headerlink" title="《我的邻居拉季洛夫》"></a>《我的邻居拉季洛夫》</h3><p>　　主人公是小地主拉其洛夫。他至多五十来岁，年富力强，为人慷慨，待人和善。他参过军，见多识广，谈吐自由，性情内向。他曾结过婚，但妻子因难产病故。现在他带着妻子的妹妹私奔。</p>
+<h3 id="《独院地主奥夫夏尼科夫》"><a href="#《独院地主奥夫夏尼科夫》" class="headerlink" title="《独院地主奥夫夏尼科夫》"></a>《独院地主奥夫夏尼科夫》</h3><p>　　主人公是富农奥夫谢尼科夫。从他口里，读者知道各种不同的地主贵族，其中包括“我”的外公和外婆。此外，小说还写到富农奥夫谢尼科夫的亲侄子米加。</p>
+<h3 id="《利戈夫村》"><a href="#《利戈夫村》" class="headerlink" title="《利戈夫村》"></a>《利戈夫村》</h3><p>　　“我”和猎人叶尔摩莱到距离李郭甫村十里的芦苇荡里撑船打野鸭遇险的故事。在此过程中，我们遇到猎人符拉基米尔和渔夫舒乔克。“我们”四人坐着舒乔克的船在芦苇荡打猎的。</p>
+<h3 id="《别任草地》"><a href="#《别任草地》" class="headerlink" title="《别任草地》"></a>《别任草地》</h3><p>　　“我”因为贪恋打猎晚归，回家途中迷了路，后来只好跟五个小孩儿在河湾大草地的篝火旁边过夜，“我”假装睡着了，听到了孩子们关于家神、美人鱼的迷信和神话，以及当地发生过的一些传说的谈话。</p>
+<h3 id="《美丽的梅恰河畔的卡西扬》"><a href="#《美丽的梅恰河畔的卡西扬》" class="headerlink" title="《美丽的梅恰河畔的卡西扬》"></a>《美丽的梅恰河畔的卡西扬》</h3><p>　　“我”打猎归来，在路上碰到出殡的队伍，为了避开这“不祥之兆”，车夫赶马向前，结果车轴坏了。在侏儒卡西杨的陪同下到伐木场买车轴和打鸟，从“我”和他的交谈中了解到卡西杨的身世和为人。在返回新村前见到了疑似老人私生女的安娜。最后回到家里，天已大黑。</p>
+<h3 id="《总管》"><a href="#《总管》" class="headerlink" title="《总管》"></a>《总管》</h3><p>　　主人公是年轻的地主阿尔卡奇·巴夫莱契·别诺契金，此人是个表面和善、开明，内心冷酷、守旧的人物。他的管家聪明能干，地主老爷喜欢他，纵容他在庄园当家做主、发号施令、欺辱百姓。</p>
+<h3 id="《办事处》"><a href="#《办事处》" class="headerlink" title="《办事处》"></a>《办事处》</h3><p>　　一个绵绵细雨的秋天，“我”打猎归来，经一个看守窝棚的老人指点，来到安尼耶沃村洛司涅科娃夫人的田庄管理处躲雨，被管理处的主要负责人安排在隔壁的房间里睡觉、休息。“我”后来透过间壁的空隙看见和听见办事处发生的一切。 </p>
+<h3 id="《孤狼》"><a href="#《孤狼》" class="headerlink" title="《孤狼》"></a>《孤狼》</h3><p>　　傍晚我打猎归来时，天气突变，狂风暴雨，拉车的母马陷在泥泞中就看林人皮留克帮“我”走出困境，把“我”拉到他家。天晴后，皮留克准备送“我”回家时擒获一个偷砍树木的农民，经我的帮助，皮留克放了那个农民。然后他送“我”出了树林，分手告别。</p>
+<h3 id="《两地主》"><a href="#《两地主》" class="headerlink" title="《两地主》"></a>《两地主》</h3><p>　　本片主人公与第五篇的地主拉其洛夫他们的出身和经历不同。一个是退伍的将军，一个是土生土长的地主。这是他们两人的共性，虽然各有自己的特点。本片描写了将军的其人其事；而对这个土老爷，则主要用“我”的一次访问记实以揭露他的外表热情温和、内心冷酷残忍的伪君子言行。</p>
+<h3 id="《列别江》"><a href="#《列别江》" class="headerlink" title="《列别江》"></a>《列别江》</h3><p>　　“我”在列别姜打猎后，下榻于当地的一个旅馆。回旅馆吃完午饭去马贩子家买马，但由于公爵的到来而没有成交。最后“我”在另外一家买了一匹，但“到家”后发现自己上当受骗：原来这是一匹瘸腿的病马。</p>
+<h3 id="《塔吉雅娜·鲍里索夫娜和她的侄儿》"><a href="#《塔吉雅娜·鲍里索夫娜和她的侄儿》" class="headerlink" title="《塔吉雅娜·鲍里索夫娜和她的侄儿》"></a>《塔吉雅娜·鲍里索夫娜和她的侄儿》</h3><p>　　本篇写达吉雅娜·鲍里莎夫娜的为人，以及她收养与培养侄儿的情况。但这位侄儿学画没有成功，白花了她的钱和心血。</p>
+<h3 id="《死》"><a href="#《死》" class="headerlink" title="《死》"></a>《死》</h3><p>　　作者先后写了五个俄罗斯人的死，他们的死因和临死时的心态，以及周围人的反应，以及“我”的思索和感慨。</p>
+<h3 id="《歌手》"><a href="#《歌手》" class="headerlink" title="《歌手》"></a>《歌手》</h3><p>　　描写了两个歌手在郭洛托夫卡村一个孤零零的酒店赛歌的具体过程；但小说主人公除了这两个歌手——小包工和土耳其人亚什卡，酒店老板尼古拉·伊万雷莫尔等等他们是听众，也是裁判。</p>
+<h3 id="《彼得·彼得罗维奇·卡拉塔耶夫》"><a href="#《彼得·彼得罗维奇·卡拉塔耶夫》" class="headerlink" title="《彼得·彼得罗维奇·卡拉塔耶夫》"></a>《彼得·彼得罗维奇·卡拉塔耶夫》</h3><p>　　卡拉塔也夫爱上了一个女地主的丫鬟，想为她赎身，但遭到女地主的拒绝，并将丫鬟遣送走。后来，卡拉塔也夫驾车把玛特辽娜带回到自己家，从此两人过着甜蜜的生活。他们在一次驾车外出的路上正面碰上了女地主。事情败露，女地主状告他们，纠缠不休。最后玛特辽娜决定自首，此后缈无音讯。卡拉塔也夫负债累累，变卖家产，远走莫斯科谋事。他决心不回家乡，而是“要死在莫斯科”。</p>
+<h3 id="《幽会》"><a href="#《幽会》" class="headerlink" title="《幽会》"></a>《幽会》</h3><p>　　写一对青年情侣离别前最后一次“幽会”的情景。男方“是一个阔少爷宠爱的仆从。”女方是一个“苦命、可怜的孤儿”。看来二人之间已经有了一段爱情关系，但男方的感情不深，在离别前表现冷漠，而女方的感情真挚热烈。</p>
+<h3 id="《希格雷县的哈姆莱特》"><a href="#《希格雷县的哈姆莱特》" class="headerlink" title="《希格雷县的哈姆莱特》"></a>《希格雷县的哈姆莱特》</h3><p>　　一次打猎的旅行中，“我”得到邻村一个小地主的邀请，去他家赴宴。那天晚上，“我”和他睡一间房，两人都睡不着。于是就开始交谈，他对我敞开心怀，打开了话匣，讲了自己悲剧性的经历。</p>
+<h3 id="《切尔托普哈诺夫和涅多皮尤斯金》"><a href="#《切尔托普哈诺夫和涅多皮尤斯金》" class="headerlink" title="《切尔托普哈诺夫和涅多皮尤斯金》"></a>《切尔托普哈诺夫和涅多皮尤斯金》</h3><p>　　猎人叶尔摩莱陪“我”打猎回来，在路上先后遇到了切尔托布哈诺夫和涅多皮尤斯金， “我”对他们做了一些调查之后，亲自登门拜访切尔托布哈诺夫，并参加了他们的家庭歌舞晚会，“很晚我才离开无梦村”。</p>
+<h3 id="《切尔托普哈诺夫的末路》"><a href="#《切尔托普哈诺夫的末路》" class="headerlink" title="《切尔托普哈诺夫的末路》"></a>《切尔托普哈诺夫的末路》</h3><p>　　本篇写主人公切尔托布哈诺夫的末路，写他经历的三次不幸：心爱的情妇玛莎的出走；至友涅多皮尤斯金的去世；比爱人和至友更珍贵的宝马玛列克-阿泰力被盗。就是这三次不幸酿成切尔托布哈诺夫的人生悲剧。</p>
+<h3 id="《枯萎了的女人》"><a href="#《枯萎了的女人》" class="headerlink" title="《枯萎了的女人》"></a>《枯萎了的女人》</h3><p>　　露克丽雅从前是个漂亮活泼的女仆，如今她长期瘫痪在床，骨瘦如柴，村里人给起外号叫 “活木乃伊”，但她仍然是一个聪明善良、温柔文静、虔诚的基督信徒。小说主要写她病中的思想和感情。</p>
+<h3 id="《车轱辘响》"><a href="#《车轱辘响》" class="headerlink" title="《车轱辘响》"></a>《车轱辘响》</h3><p>　　小说从飞洛费这个人物的“傻”写到他一路驾车过程中表现的机智和聪明；从半路遇匪的危险场面写到化险为夷，转危为安。刻画两个人物的同时也反映当时俄国的社会治安状况。</p>
+<h3 id="《树林和草原》"><a href="#《树林和草原》" class="headerlink" title="《树林和草原》"></a>《树林和草原》</h3><p>　　全篇写的是猎人喜欢的树林和草原在春夏秋冬四季的自然风光。本篇可以看成这些写景片断的归纳和总结。诗情画意，美不胜收。</p>
+<h2 id="人物形象"><a href="#人物形象" class="headerlink" title="人物形象"></a>人物形象</h2><p>　　屠格涅夫细致地描写生活在贫寒的社会最底层的农奴所遭遇的种种苦难，用心去感受俄罗斯大地上那些枯破灰暗的白桦树下、那些浑浊的潭水中，那荒凉而贫瘠的原野里，低矮潮湿的房屋中那些细碎而深切的情绪和灵魂。他一方面或正面、或侧面的写那些农奴主、地主们之间自私自利，骄横冷酷的性格。</p>
+<p>　　但他也用同样低沉而忧郁的笔调写着医生和地主女儿之间因为死亡而带来的爱情悲剧（《县里的医生》），写生活和理想格格不入，找不到理想的归属，找不到心灵平静，同时不愿同流合污的落魄地主形象，写逐步毁灭自己的正直、暴躁、刚烈的世袭贵族切尔托普哈诺夫《切尔托普哈诺夫和涅多皮尤斯金》和《切尔托普哈诺夫的末路》这些人的悲剧。</p>
+<h3 id="霍里-——《霍里和卡利内奇》"><a href="#霍里-——《霍里和卡利内奇》" class="headerlink" title="霍里 ——《霍里和卡利内奇》"></a>霍里 ——《霍里和卡利内奇》</h3><p>　　为人<strong>精明</strong>、<strong>务实</strong>，有<strong>进取心和自信</strong>，他凭自己的<strong>勤劳和才智</strong>，为自己创建了较为独立富裕的生活。他<strong>思想开放，求知欲强</strong>，对国外的社会民生都感兴趣。他使人想起了彼得大帝，他也体现出俄罗斯人的精神特征：“<strong>相信自己的力量和刚强</strong>”，“<strong>勇敢地面对未来</strong>”。</p>
+<p>　　评价：聪慧能干、有精明的头脑、是个实用主义的人物</p>
+<h3 id="卡里内奇-——《霍里和卡利内奇》"><a href="#卡里内奇-——《霍里和卡利内奇》" class="headerlink" title="卡里内奇 ——《霍里和卡利内奇》"></a>卡里内奇 ——《霍里和卡利内奇》</h3><p>　　这是个颇具<strong>天赋和丰富内心世界</strong>的农民。他不像霍里那样务实，不善于安排个人生活。他是个<strong>理想派、浪漫派</strong>一类的人，<strong>热情而好幻想</strong>，<strong>爱好大自然</strong>。他有多种特长：养蜂、治病、念咒语、识天时，又能弹会唱，还识得字。</p>
+<p>　　评价：为人忠诚、心里非常的善良，有自由主义，也非常的浪漫</p>
+<h3 id="几个小霍里-——《霍里和卡利内奇》"><a href="#几个小霍里-——《霍里和卡利内奇》" class="headerlink" title="几个小霍里 ——《霍里和卡利内奇》"></a>几个小霍里 ——《霍里和卡利内奇》</h3><p>　　他们看起来是那样<strong>健康、开朗、富于幽默感</strong>。</p>
+<p>　　这些小霍里将比老霍里更强，他们<strong>更有能力去开拓自己的未来</strong>。</p>
+<h3 id="卡西扬-——《美丽的梅恰河畔的卡西扬》"><a href="#卡西扬-——《美丽的梅恰河畔的卡西扬》" class="headerlink" title="卡西扬 ——《美丽的梅恰河畔的卡西扬》"></a>卡西扬 ——《美丽的梅恰河畔的卡西扬》</h3><p>　　他身体矮小瘦弱，不善于干活，可他<strong>充满着生命的活力</strong>。他在大自然的怀抱中显得那么<strong>灵活、自在、惬意</strong>，他能与各种鸟儿对歌、争鸣，能利用野草为人治病。他<strong>头脑聪明，善于思考</strong>，平常沉默寡言，但一旦打开话匣子，便滔滔不绝，活像个哲学家，说出一套套绝非一般农民所能说得出的哲理。他爱大自然中的一切生灵，认为一切飞禽走兽都有权享受自己的生命，有权活尽自己的天年。射猎它们是罪过的。他认为人类有自己吃喝的东西，那就是上帝所恩赐的粮食和水，还有祖宗传下来的家禽家畜。</p>
+<p>　　他自己却喜欢去捕捉夜莺，但他不是为了杀害它、食用它，而是让它为人们开心快乐。他说鱼是可以捕食的，因为鱼的血“是冷的，不是活的”。他认为做人“<strong>必须正直，这是最要紧的</strong>”。他感到“<strong>人间无公道</strong>”，他打算去“寻找真理”！</p>
+<p>　　作者赞叹农民的<strong>纯真和善良</strong>，赞叹他们的<strong>道德力量</strong>。</p>
+<h3 id="雅可夫-——《歌手》"><a href="#雅可夫-——《歌手》" class="headerlink" title="雅可夫 ——《歌手》"></a>雅可夫 ——《歌手》</h3><p>　　直接地赞美山沟里的农民歌手雅可夫的<strong>艺术天赋</strong>，同时也间接地赞美歌手身边那群农人的<strong>音乐鉴赏力</strong>。作家借猎人之口说，这位农民的歌声“<strong>蕴有真挚深沉的情感、青春的气息、力量、甜美</strong>，以及一种<strong>淡淡的哀愁</strong>”，说那歌声里跳跃着“<strong>一颗俄罗斯正义的炽热灵魂</strong>”，它紧紧地“<strong>抓住人们的心，直接扣动俄罗斯人的心弦</strong>”。</p>
+<p>　　接着作家描写了在场听众的反应作为印证。你看，猎人的心弦被“扣动”了，“涌上了热泪”，酒馆老板娘禁不住“发出低沉的、压抑的哭声”，老成持重的老板感动得“垂下了头”，眨巴眼压制着内心的激动而“扭过头去”，笨瓜“深深动情了，笨相地张着嘴巴，呆呆地站着”，穿破长袍的庄稼人“在角落里低声抽泣”，那沉着冷静的“怪老爷”也“涌出大颗的泪珠”，连雅可夫的竞赛对手包工头都听得“发愣”了。</p>
+<p>　　作家似乎在告诉人们：<strong>在俄罗斯农民中不仅有艺术天才，更有广大的能够欣赏艺术美的群众</strong>。可是作家又在后面描写了一幅令人“很不愉快的”画面，表现了这群农人醉酒后使人懊丧的丑态。这无疑是要发人深思：<strong>农奴制下的现实生活无情地扭曲了这些具有才华和美好心灵的农人，他们理应有一种文明的、适合于他们美好心灵的生活</strong>！</p>
+<h3 id="马特列娜-——《彼·彼·卡拉塔叶夫》"><a href="#马特列娜-——《彼·彼·卡拉塔叶夫》" class="headerlink" title="马特列娜 ——《彼·彼·卡拉塔叶夫》"></a>马特列娜 ——《彼·彼·卡拉塔叶夫》</h3><p>　　<strong>聪明美丽的渴求爱情</strong>和<strong>自由</strong>而又<strong>勇于作自我牺牲</strong></p>
+<h3 id="阿库丽娜-——《幽会》"><a href="#阿库丽娜-——《幽会》" class="headerlink" title="阿库丽娜 ——《幽会》"></a>阿库丽娜 ——《幽会》</h3><p>　　<strong>纯真、温柔而又痴情</strong></p>
+<h3 id="卢克丽娅-——《枯萎了的女人》"><a href="#卢克丽娅-——《枯萎了的女人》" class="headerlink" title="卢克丽娅 ——《枯萎了的女人》"></a>卢克丽娅 ——《枯萎了的女人》</h3><p>　　卢克丽娅原先是一个<strong>能歌善舞、笑声朗朗的美丽姑娘</strong>，曾是众多小伙子爱慕的对象。可是她后来不幸地从高台阶上重重摔了下来，由于没有得到适当的治疗而瘫痪，枯萎了，成了一具“活尸首”，虽然她外形的美丧失了，可是她那<strong>心灵的美反显得更为动人</strong>：她是那样<strong>坚强地</strong>忍受着病痛的折磨，她竟能<strong>以女英雄贞德的精神鼓舞自己</strong>。在长期的僵卧状态中仍表现出她<strong>对生命、对大自然的热爱</strong>；她<strong>不去抱怨个人的不幸</strong>，很<strong>能体谅别人</strong>，还<strong>惦记着农民兄弟的贫苦</strong>。</p>
+<h3 id="五个天真稚气的农家孩子-——《别任草地》"><a href="#五个天真稚气的农家孩子-——《别任草地》" class="headerlink" title="五个天真稚气的农家孩子 ——《别任草地》"></a>五个天真稚气的农家孩子 ——《别任草地》</h3><p>　　作家把他们置于暮色笼罩下的草地的背景里，似乎是有意烘托他们的<strong>纯真和可爱</strong>。然而他们毕竟是些穷孩子，小小年纪便分担着生活的担子，显然他们是没有机会上学，接受科学的教育的，他们受到的是民间的神话传说的熏陶。他们讲的传说故事里都带有恐怖凄凉的色彩，这<strong>反映了现实生活的苦痛已在孩子们心灵上留下了阴影</strong>，作家对他们倾注了<strong>深深的同情</strong>。</p>
+
+    </div>
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2019 - 2022 test19124の小窝
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @test19124
+        </div>
+        <div></div>
+        <div>由 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 进行驱动 & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX</a> 主题</div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+
+        <!-- 看板娘 -->
+        <script src="/js/pixi.min.js"></script>
+        <script src="/js/live2d.min.js"></script>
+        <script src="/css/live2d.css"></script>
+        <div id="L2dCanvas"></div>
+        <script>
+            var modell = ["lafei_4","dujiaoshou_4","dujiaoshou_4"];
+            var v = new Viewer({
+                width: 240,
+                height: 325,
+                right: "0",
+                bottom: "0",
+                basePath: "/model",
+                role: modell[Math.floor(Math.random()*10)%3],
+                mobile: true,
+            });
+        </script>
+
+        <!-- 流星背景特效 -->
+        <canvas id="background" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1" ></canvas>
+        <script src="/js/background.js"></script>
+    </body>
+</html>

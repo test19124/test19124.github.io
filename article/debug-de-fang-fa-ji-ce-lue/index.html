@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>Debug的方法及策略 | Test19124の小窝</title>
+        <meta name="author" content="test19124">
+        <meta name="description" content="QwQ~">
+        <meta name="keywords" content="test19124,lizishuo,test19124の小窝">
+        <link rel="icon" href="/img/avatar.png">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.1.1/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+    <meta name="generator" content="Hexo 5.4.2"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">test19124の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/article/guan-yu-zhe-ge-bo-ke">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;关于</span>
+        </a>
+        
+        <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;资料</span>
+        </a>
+        
+        <a href="/tags/%E9%A2%98%E8%A7%A3">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;题解</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;test19124の小窝</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                </div>
+            </a>
+            
+            <a href="article/guan-yu-zhe-ge-bo-ke">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">关于</div>
+                </div>
+            </a>
+            
+            <a href="tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">资料</div>
+                </div>
+            </a>
+            
+            <a href="tags/%E9%A2%98%E8%A7%A3">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">题解</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        
+<div class="article">
+    <div>
+        <h1>Debug的方法及策略 </h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/8/9
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/编程/" style="color: #ff7d73">
+                    编程
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    <div class="content" v-pre>
+        <p>C++以及普及组选手多使用静态查错法与输出调试法</p>
+<p>提高组选手可以适当使用对拍调试法</p>
+<p>[<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1sQ4y1K7T4/">https://www.bilibili.com/video/BV1sQ4y1K7T4/</a> 初级调试指南视频版]</p>
+<p>[<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1he411p74Y/">https://www.bilibili.com/video/BV1he411p74Y/</a> 高级调试指南视频版]</p>
+<p>= 调试指南 =</p>
+<p>1：在草稿纸上模拟程序的运行，写下一些关键变量的中间结果</p>
+<p>2：利用打印调试法打印出这些中间变量的值</p>
+<p>3：对比观察</p>
+<span id="more"></span>
+
+
+<p>下面介绍利用数据去查错的几种查错方法</p>
+<p>== 静态查错法 ==</p>
+<p>静态查错法的意思是说，写完程序，先整体浏览一遍代码，把一些肉眼可见的，明显发现是错的地方修改掉</p>
+<p>根据以往的经验，我们发现，一个选手功力越深，静态查错的时候能发现的问题越多，往往大多数错误不需要下面的方法就已经查出来了。</p>
+<p>== 输出调试法 ==</p>
+<p>首先，我们运行了一组数据，发现结果不对，然后静态查错也没看出什么来，这个时候我们采用输出调试法。</p>
+<p>1：先 分段  打印一些变量，观察变量的值跟预想的对不对，找到最先不对的地方，然后检查，这个时候下面的代码就不用看了</p>
+<p>2：不停的重复1的行为，不断的缩小定位错误区域，直到所有的错误修复完毕</p>
+<p>举个例子</p>
+<p>比如下面这个程序, 题库链接：<a target="_blank" rel="noopener" href="https://517coding.com/p/1100">https://517coding.com/p/1100</a></p>
+<pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int a[10010];
+int b[10010];
+int main(void)&#123;
+    int n,m;
+    int k=-1e9;
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
+    for(int i=1;i&lt;=n;i++) scanf(&quot;%d&quot;,&amp;a[i]);
+    for(int i=1;i&lt;=m;i++) scanf(&quot;%d&quot;,&amp;b[i]);
+    for(int i=1;i&lt;=n;i++) &#123;
+        for(int j=1;j&lt;=n;j++) &#123;
+              
+            if(a[i]+b[j]&gt;k) &#123; 
+        //下面这行代码是用来打印调试的语句
+                 printf(&quot;i=%d j=%d sum=%d\n&quot;, i, j, a[i]+b[j]);
+                 k=a[i]+b[j];
+            &#125;
+        &#125;
+       &#125;
+    printf(&quot;%d&quot;,k);
+    return 0;
+&#125;
+
+/*
+错误数据：
+
+2 3
+1 2
+1 2 3
+*/
+</code></pre>
+<p>我们可以在循环里面加一句printf语句打印关键信息，然后运行代码下方的错误数据，我们发现会输出如下信息</p>
+<pre><code class="c++">2 3
+1 2
+1 2 3
+i=1 j=1 sum=2
+i=1 j=2 sum=3
+i=2 j=2 sum=4
+4
+</code></pre>
+<p>可以发现，答案明明是5，但是却输出了4，而且中间过程也并没有产生5，而答案5是来自于第一个数组中的2与第二个数组中的3相加得到的，此时我们通过调试信息的输出并没有发现这两个数被同时枚举到，于是我们检查两个for循环，这个时候发现了两个for循环枚举的都是1到n，而实际上，第二个循环应该枚举1到m，修改之后，这个程序就可以正常通过了</p>
+<p>== 对拍调试法 ==</p>
+<p>=== duipai.sh ===</p>
+<pre><code class="sh">#!/bin/bash
+t=0;
+while true; do
+    let &quot;t = $t + 1&quot;
+    printf $t
+    printf &quot;:\n&quot;
+    ./rand &gt; rand.txt
+    ./AC &lt; rand.txt &gt; AC.out
+    ./WA &lt; rand.txt &gt; WA.out
+     
+    if diff AC.out WA.out; then
+        printf &quot;\n&quot;
+    else
+        printf &quot;WA\n&quot;
+        cat rand.txt
+        break
+    fi
+done
+</code></pre>
+<p>=== run.bat ===</p>
+<pre><code class="bat">:loop 
+    @echo off   
+    gen.exe &gt; in.txt                       
+    my.exe &lt; in.txt  &gt; myout.txt       
+    std.exe &lt; in.txt  &gt; stdout.txt
+    fc myout.txt stdout.txt                
+if not errorlevel 1   goto loop           
+pause
+</code></pre>
+<p>=== std.cpp ===</p>
+<pre><code class="c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() &#123;
+  int a, b;
+  cin &gt;&gt; a &gt;&gt; b;
+  cout &lt;&lt; a + b &lt;&lt; endl;
+  return 0;
+&#125;
+</code></pre>
+<p>=== my.cpp ===</p>
+<pre><code class="c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+//这是一个错误程序
+int main() &#123;
+  int a, b;
+  cin &gt;&gt; a &gt;&gt;b;
+  if (a &gt; 130 &amp;&amp; b &gt; 130) &#123;
+    cout &lt;&lt; a - b &lt;&lt; endl;
+  &#125; else &#123;
+    cout &lt;&lt; a + b &lt;&lt; endl;
+  &#125;
+  return 0;
+&#125;
+</code></pre>
+<p>=== gen.cpp ===</p>
+<pre><code class="c++">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+// 返回0到x-1之间的随机数
+// rand()函数返回 0-32767之间的一个随机数
+int get_rand(int x) &#123;
+  return rand() * rand() % x + 1;
+&#125;
+
+//返回L 到 R之间的整数
+int get_rand(int L, int R) &#123;
+  return rand() * rand() % (R-L+1) + L;
+&#125;
+
+int main() &#123;
+  //初始化随机种子
+  srand(time(0));
+  int a, b;
+
+  //生成一组随机数据
+  a = get_rand(1, 200);
+  b = get_rand(1, 200);
+  cout &lt;&lt; a &lt;&lt; &quot; &quot; &lt;&lt; b &lt;&lt;endl;
+  return 0;
+&#125;
+</code></pre>
+
+    </div>
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2019 - 2022 test19124の小窝
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @test19124
+        </div>
+        <div></div>
+        <div>由 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 进行驱动 & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX</a> 主题</div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+
+        <!-- 看板娘 -->
+        <script src="/js/pixi.min.js"></script>
+        <script src="/js/live2d.min.js"></script>
+        <script src="/css/live2d.css"></script>
+        <div id="L2dCanvas"></div>
+        <script>
+            var modell = ["lafei_4","dujiaoshou_4","dujiaoshou_4"];
+            var v = new Viewer({
+                width: 240,
+                height: 325,
+                right: "0",
+                bottom: "0",
+                basePath: "/model",
+                role: modell[Math.floor(Math.random()*10)%3],
+                mobile: true,
+            });
+        </script>
+
+        <!-- 流星背景特效 -->
+        <canvas id="background" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1" ></canvas>
+        <script src="/js/background.js"></script>
+    </body>
+</html>

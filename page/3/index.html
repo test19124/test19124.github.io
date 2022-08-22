@@ -1,0 +1,734 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>Test19124の小窝</title>
+        <meta name="author" content="test19124">
+        <meta name="description" content="QwQ~">
+        <meta name="keywords" content="test19124,lizishuo,test19124の小窝">
+        <link rel="icon" href="/img/avatar.png">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.1.1/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+    <meta name="generator" content="Hexo 5.4.2"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">test19124の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/article/guan-yu-zhe-ge-bo-ke">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;关于</span>
+        </a>
+        
+        <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;资料</span>
+        </a>
+        
+        <a href="/tags/%E9%A2%98%E8%A7%A3">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;题解</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;test19124の小窝</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                </div>
+            </a>
+            
+            <a href="article/guan-yu-zhe-ge-bo-ke">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">关于</div>
+                </div>
+            </a>
+            
+            <a href="tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">资料</div>
+                </div>
+            </a>
+            
+            <a href="tags/%E9%A2%98%E8%A7%A3">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">题解</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        <div id="home-head">
+    <div id="home-background" style="background-image: url(/img/background.jpg)"></div>
+    
+    <div id="home-info" class="home-info" @click="home_click">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>test19124の小窝</h1>
+                <h3></h3>
+                <h5>QwQ~</h5>
+            </div>
+        </span>
+    </div>
+    
+</div>
+
+<div id="home-posts-wrap" class=>
+    <div id="home-posts">
+        <div id="posts">
+            
+
+<div class="post">
+    <a href="/article/jian-dang-bai-nian-zhong-guo-yin-ji-su-cai-ji-lei/">
+        <h2>
+            “建党百年，中国印记”素材积累
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/6/5
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="奋斗者号"><a href="#奋斗者号" class="headerlink" title="奋斗者号"></a>奋斗者号</h1><p><img src="https://pics0.baidu.com/feed/0823dd54564e9258c3ad627dac85405fcdbf4e92.jpeg?token=213d78a79f68450de5a37f46a0f3e429"></p>
+<p>“奋斗者”号28日胜利返航。自2020年10月10日起，“奋斗者”号赴马里亚纳海沟开展万米海试，成功完成13次下潜，8次突破万米。11月10日8时12分，“奋斗者”号创造10909米中国载人深潜新纪录，标志着我国在大深度载人深潜领域达到世界领先水平。</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/学习资料/" style="color: #00bcd4">
+                学习资料
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/语文/" style="color: #00bcd4">
+                语文
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/jian-dang-bai-nian-zhong-guo-yin-ji-su-cai-ji-lei/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/chi-su-cai-ji-lei/">
+        <h2>
+            “吃”素材积累
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/5/29
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <span id="more"></span>
+
+<iframe src="http://file.lizishuo.ml/%E2%80%9C%E5%90%83%E2%80%9D%E7%B4%A0%E6%9D%90%E7%A7%AF%E7%B4%AF.pdf" width="100%" height="800px">
+    您的浏览器不支持预览PDF <a target="_blank" rel="noopener" href="http://file.lizishuo.ml/%E2%80%9C%E5%90%83%E2%80%9D%E7%B4%A0%E6%9D%90%E7%A7%AF%E7%B4%AF.pdf">【点此下载PDF】</a>
+</iframe>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/学习资料/" style="color: #ff7d73">
+                学习资料
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/语文/" style="color: #ff7d73">
+                语文
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/chi-su-cai-ji-lei/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/ben-lai-wo-ke-yi-su-cai-ji-lei/">
+        <h2>
+            "本来我可以＿＿"素材积累
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/5/8
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="坚持"><a href="#坚持" class="headerlink" title="坚持"></a>坚持</h1><h2 id="关于坚持的作文素材"><a href="#关于坚持的作文素材" class="headerlink" title="关于坚持的作文素材"></a>关于坚持的作文素材</h2><h3 id="达·芬奇"><a href="#达·芬奇" class="headerlink" title="达·芬奇"></a>达·芬奇</h3><blockquote>
+<p>　　欧洲文艺复兴时期的著名画家达·芬奇，从小爱好绘画。父亲送他到当时意大利的名城佛罗伦萨，拜名画家佛罗基奥为师。老师要他从画蛋入手。他画了一个又一个，足足画了十多天。老师见他有些不耐烦了，便对他说：“不要以为画蛋容易，要知道，1000个蛋中从来没有两个是完全相同的；即使是同一个蛋，只要变换一下角度去看形状也就不同了，蛋的椭圆形轮廓就会有差异。所以，要在画纸上把它完美的表现出来，非得下番苦功不可。”从此，达·芬奇用心学习素描，经过长时期勤奋艰苦的艺术实践，终于创作出许多不朽的名画。</p>
+</blockquote>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/学习资料/" style="color: #03a9f4">
+                学习资料
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/语文/" style="color: #ff7d73">
+                语文
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/ben-lai-wo-ke-yi-su-cai-ji-lei/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/du-shu-zhuan-ti-zheng-li/">
+        <h2>
+            “读书”专题整理
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/5/1
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="名人读书的故事"><a href="#名人读书的故事" class="headerlink" title="名人读书的故事"></a>名人读书的故事</h1><h2 id="黄侃误把墨汁当小菜"><a href="#黄侃误把墨汁当小菜" class="headerlink" title="黄侃误把墨汁当小菜"></a>黄侃误把墨汁当小菜</h2><p>1915年，著名学者黄侃在北大主讲国学。他住在北京白庙胡同大同公寓，终日潜心研究“国学”，有时吃饭也不出书房门，准备了馒头和辣椒、酱油等佐料，摆在书桌上，饿了便啃馒头，边吃边看书，吃吃停停。<br>看到妙处就大叫：“妙极了！”有一次，看书入迷，竟把馒头伸进了砚台、朱砂盒，啃了多时，涂成花脸，也未觉察，一位朋友来访，捧腹大笑，他还不知笑他什么。</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/学习资料/" style="color: #00bcd4">
+                学习资料
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/语文/" style="color: #03a9f4">
+                语文
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/du-shu-zhuan-ti-zheng-li/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/wen-tian-xiang-ren-wu-zheng-li/">
+        <h2>
+            文天祥人物整理
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/4/24
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <p><strong><a target="_blank" rel="noopener" href="https://vd2.bdstatic.com/mda-jmi6eqfyx3ybprj5/v1-cae/sc/mda-jmi6eqfyx3ybprj5.mp4?v_from_s=nj_haokan_4469&auth_key=1619244958-0-0-605ad624ad72279786d12838bc12bb2f&bcevod_channel=searchbox_feed&pd=1&pt=3&abtest=">文天祥</a><strong>（1236/6/6—1283/1/9/），初名云孙，字宋瑞，又字履善。自号浮休道人、文山。吉州庐陵（今江西省吉安市青原区富田镇）人，南宋末年</strong>政治家</strong>、<strong>文学家</strong>，<strong>抗元名臣</strong>，<strong>民族英雄</strong>，与陆秀夫、张世杰并称为“<strong>宋末三杰</strong>”。</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/学习资料/" style="color: #ff7d73">
+                学习资料
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/语文/" style="color: #ff7d73">
+                语文
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/wen-tian-xiang-ren-wu-zheng-li/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/luo-tuo-xiang-zi/">
+        <h2>
+            骆驼祥子
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/1/27
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <p>《骆驼祥子》讲述的是旧中国北平城里一个人力车夫祥子的悲剧故事。祥子来自农村，他老实善良、健壮、坚忍。来到北平后，选择拉车谋生。他最大的梦想就是拥有一辆自己的车。但是他的希望一次又一次的破灭，他与命运的抗争最终以失败告终。</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/学习资料/" style="color: #00a596">
+                学习资料
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/语文/" style="color: #ff7d73">
+                语文
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/luo-tuo-xiang-zi/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/dao-fa/">
+        <h2>
+            可爱你的【道法】七上
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/1/16
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h2 id="中学序曲"><a href="#中学序曲" class="headerlink" title="中学序曲"></a>中学序曲</h2><h3 id="中学时代的意义"><a href="#中学时代的意义" class="headerlink" title="中学时代的意义"></a>中学时代的意义</h3><ol>
+<li>我们站在一个新的起点上</li>
+<li>中学时代是我们人生发展的新阶段</li>
+<li>中学时代见证着一个人从少年到青年的生命进阶</li>
+</ol>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/学习资料/" style="color: #ff7d73">
+                学习资料
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/社会/" style="color: #ff7d73">
+                社会
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/dao-fa/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/lie-ren-bi-ji/">
+        <h2>
+            猎人笔记
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2020/12/12
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h2 id="创作背景"><a href="#创作背景" class="headerlink" title="创作背景"></a>创作背景</h2><p>　　《猎人笔记》是19世纪40年代末50年代初问世的。这时正是俄国解放运动从贵族革命向资产阶级民主主义革命过渡的时期，是俄国社会生活处在大转变的历史时期。这一时期，俄国专制制度腐朽的本质更加暴露出来了，农奴制度的危机更加加深了。</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/学习资料/" style="color: #00a596">
+                学习资料
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/语文/" style="color: #ff7d73">
+                语文
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/lie-ren-bi-ji/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/guan-yu-zhe-ge-bo-ke/">
+        <h2>
+            关于这个博客
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2020/12/4
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <p>QwQ , 这是test19124的小博客</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/未分类/" style="color: #00a596">
+                未分类
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/guan-yu-zhe-ge-bo-ke/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/hello-world/">
+        <h2>
+            Hello World
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2019/9/19
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/article/hello-world/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+             
+<div class="page-current">
+    <div class="prev">
+        
+        <a href="/page/2/">
+            <span class="page-num">
+                <i class="fa-solid fa-caret-left fa-fw"></i>
+            </span>
+        </a>
+        
+    </div>
+    <div class="page-index">
+        
+        <span>
+            
+            
+                
+                <a href="/">
+                    <span class="page-num">1</span>
+                </a>
+                
+                
+            
+            <a href="/page/2/">
+                <span class="page-num">
+                    2
+                </span>
+            </a>
+        </span>
+        
+        <span class="current">
+            3
+        </span>
+        
+    </div>
+    <div class="next">
+        
+    </div>
+</div>
+        </div>
+    </div>
+    
+    <div id="home-card">
+        <div id="card-div">
+    <div class="card-style" style="width: 300px">
+        <div class="avatar">
+            <img src="/img/avatar.png " alt="avatar">
+        </div>
+        <div class="name">
+            test19124
+        </div>
+        <div class="descriptions">
+            
+            <div class="description">
+                test19124の小窝
+            </div>
+            
+        </div>
+        <div class="icon-links">
+            
+            <span class="icon-link">
+                <a target="_blank" rel="noopener" href="https://github.com/test19124/">
+                    <i class="fa-brands fa-github fa-fw"></i>
+                </a>
+            </span>
+            
+        </div>
+        <div class="friend-links">
+            
+        </div>
+    </div>
+</div>
+    </div>
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2019 - 2022 test19124の小窝
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @test19124
+        </div>
+        <div></div>
+        <div>由 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 进行驱动 & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX</a> 主题</div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+
+        <!-- 看板娘 -->
+        <script src="/js/pixi.min.js"></script>
+        <script src="/js/live2d.min.js"></script>
+        <script src="/css/live2d.css"></script>
+        <div id="L2dCanvas"></div>
+        <script>
+            var modell = ["lafei_4","dujiaoshou_4","dujiaoshou_4"];
+            var v = new Viewer({
+                width: 240,
+                height: 325,
+                right: "0",
+                bottom: "0",
+                basePath: "/model",
+                role: modell[Math.floor(Math.random()*10)%3],
+                mobile: true,
+            });
+        </script>
+
+        <!-- 流星背景特效 -->
+        <canvas id="background" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1" ></canvas>
+        <script src="/js/background.js"></script>
+    </body>
+</html>

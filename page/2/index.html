@@ -1,0 +1,827 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>Test19124の小窝</title>
+        <meta name="author" content="test19124">
+        <meta name="description" content="QwQ~">
+        <meta name="keywords" content="test19124,lizishuo,test19124の小窝">
+        <link rel="icon" href="/img/avatar.png">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.1.1/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+    <meta name="generator" content="Hexo 5.4.2"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">test19124の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/article/guan-yu-zhe-ge-bo-ke">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;关于</span>
+        </a>
+        
+        <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;资料</span>
+        </a>
+        
+        <a href="/tags/%E9%A2%98%E8%A7%A3">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;题解</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;test19124の小窝</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                </div>
+            </a>
+            
+            <a href="article/guan-yu-zhe-ge-bo-ke">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">关于</div>
+                </div>
+            </a>
+            
+            <a href="tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">资料</div>
+                </div>
+            </a>
+            
+            <a href="tags/%E9%A2%98%E8%A7%A3">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">题解</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        <div id="home-head">
+    <div id="home-background" style="background-image: url(/img/background.jpg)"></div>
+    
+    <div id="home-info" class="home-info" @click="home_click">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>test19124の小窝</h1>
+                <h3></h3>
+                <h5>QwQ~</h5>
+            </div>
+        </span>
+    </div>
+    
+</div>
+
+<div id="home-posts-wrap" class=>
+    <div id="home-posts">
+        <div id="posts">
+            
+
+<div class="post">
+    <a href="/article/517-yi-huo-he-ti-jie/">
+        <h2>
+            517异或和题解
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/8/10
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="按钮变色-第一课-枚举技巧-状压-折半-尺取法-2020最新版提高组初级课程"><a href="#按钮变色-第一课-枚举技巧-状压-折半-尺取法-2020最新版提高组初级课程" class="headerlink" title="按钮变色-第一课: 枚举技巧-状压/折半/尺取法-2020最新版提高组初级课程"></a>按钮变色-第一课: 枚举技巧-状压/折半/尺取法-2020最新版提高组初级课程</h1><p><a target="_blank" rel="noopener" href="https://517coding.com/p/3970">题目链接</a></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>尺取法加强，记得开long long</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/编程/" style="color: #ff7d73">
+                编程
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/题解/" style="color: #ffa2c4">
+                题解
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/517提高组/" style="color: #00bcd4">
+                517提高组
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/517-yi-huo-he-ti-jie/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/517-zui-duan-lian-xu-zi-xu-lie-ti-jie/">
+        <h2>
+            517最短连续子序列题解
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/8/10
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="最短连续子序列-第一课-枚举技巧-状压-折半-尺取法-2020最新版提高组初级课程"><a href="#最短连续子序列-第一课-枚举技巧-状压-折半-尺取法-2020最新版提高组初级课程" class="headerlink" title="最短连续子序列-第一课: 枚举技巧-状压/折半/尺取法-2020最新版提高组初级课程"></a>最短连续子序列-第一课: 枚举技巧-状压/折半/尺取法-2020最新版提高组初级课程</h1><p><a target="_blank" rel="noopener" href="https://517coding.com/p/3960">题目链接</a></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>尺取法</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/编程/" style="color: #00a596">
+                编程
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/题解/" style="color: #00a596">
+                题解
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/517提高组/" style="color: #03a9f4">
+                517提高组
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/517-zui-duan-lian-xu-zi-xu-lie-ti-jie/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/debug-de-fang-fa-ji-ce-lue/">
+        <h2>
+            Debug的方法及策略
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/8/9
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <p>C++以及普及组选手多使用静态查错法与输出调试法</p>
+<p>提高组选手可以适当使用对拍调试法</p>
+<p>[<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1sQ4y1K7T4/">https://www.bilibili.com/video/BV1sQ4y1K7T4/</a> 初级调试指南视频版]</p>
+<p>[<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1he411p74Y/">https://www.bilibili.com/video/BV1he411p74Y/</a> 高级调试指南视频版]</p>
+<p>= 调试指南 =</p>
+<p>1：在草稿纸上模拟程序的运行，写下一些关键变量的中间结果</p>
+<p>2：利用打印调试法打印出这些中间变量的值</p>
+<p>3：对比观察</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/编程/" style="color: #03a9f4">
+                编程
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/debug-de-fang-fa-ji-ce-lue/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/517-an-niu-bian-se-ti-jie/">
+        <h2>
+            517按钮变色题解
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/8/7
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="按钮变色-第一课-枚举技巧-状压-折半-尺取法-2020最新版提高组初级课程"><a href="#按钮变色-第一课-枚举技巧-状压-折半-尺取法-2020最新版提高组初级课程" class="headerlink" title="按钮变色-第一课: 枚举技巧-状压/折半/尺取法-2020最新版提高组初级课程"></a>按钮变色-第一课: 枚举技巧-状压/折半/尺取法-2020最新版提高组初级课程</h1><p><a target="_blank" rel="noopener" href="https://517coding.com/p/3951">题目链接</a></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>暴力dfs</p>
+<p>易证：每个点最多会被翻转一次（2次不就翻回来了吗qwq）</p>
+<p>dfs枚举每个点是否会被翻，查看当前是否全部同色</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/编程/" style="color: #00bcd4">
+                编程
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/题解/" style="color: #ffa2c4">
+                题解
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/517提高组/" style="color: #00bcd4">
+                517提高组
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/517-an-niu-bian-se-ti-jie/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/517-fu-gai-shu-zhou-ti-jie/">
+        <h2>
+            517覆盖数轴题解
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/8/7
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="覆盖数轴-第二课：贪心算法-【中级班】517编程普及组"><a href="#覆盖数轴-第二课：贪心算法-【中级班】517编程普及组" class="headerlink" title="覆盖数轴-第二课：贪心算法-【中级班】517编程普及组"></a>覆盖数轴-第二课：贪心算法-【中级班】517编程普及组</h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><blockquote>
+<p>有一个长度为m的数轴，现在有n个区间，每个区间有一个左右端点，现在需要选择最少的区间，覆盖整个数轴。</p>
+</blockquote>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/编程/" style="color: #03a9f4">
+                编程
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/题解/" style="color: #ff7d73">
+                题解
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/517普及组/" style="color: #ff7d73">
+                517普及组
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/517-fu-gai-shu-zhou-ti-jie/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/517-you-fu-huan-zui-duan-lu-jing-ti-jie/">
+        <h2>
+            517有负环最短路径题解
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/8/6
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="有负环最短路径-第十课：最短路径-【中级班】517编程普及组"><a href="#有负环最短路径-第十课：最短路径-【中级班】517编程普及组" class="headerlink" title="有负环最短路径-第十课：最短路径-【中级班】517编程普及组"></a>有负环最短路径-第十课：最短路径-【中级班】517编程普及组</h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><blockquote>
+<p>给定一个有向图，求1到n的最短路径。<br>可以判断图中是否有负环。 </p>
+</blockquote>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/编程/" style="color: #00a596">
+                编程
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/题解/" style="color: #03a9f4">
+                题解
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/517普及组/" style="color: #ffa2c4">
+                517普及组
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/517-you-fu-huan-zui-duan-lu-jing-ti-jie/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/517-pin-tu-you-xi-ti-jie/">
+        <h2>
+            517拼图游戏题解
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/8/1
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="拼图游戏-第四课：广搜-【中级班】517编程普及组"><a href="#拼图游戏-第四课：广搜-【中级班】517编程普及组" class="headerlink" title="拼图游戏-第四课：广搜-【中级班】517编程普及组"></a>拼图游戏-第四课：广搜-【中级班】517编程普及组</h1><p><img src="https://i.loli.net/2021/07/25/4xMjbA9NZi2sHVD.png" alt="拼图游戏-第四课：广搜-【中级班】517编程普及组"></p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/编程/" style="color: #ff7d73">
+                编程
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/题解/" style="color: #03a9f4">
+                题解
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/517普及组/" style="color: #00bcd4">
+                517普及组
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/517-pin-tu-you-xi-ti-jie/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/dao-jiu-ti-jie/">
+        <h2>
+            517倒酒题解
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/8/1
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="倒酒-第四课：广搜-【中级班】517编程普及组"><a href="#倒酒-第四课：广搜-【中级班】517编程普及组" class="headerlink" title="倒酒-第四课：广搜-【中级班】517编程普及组"></a>倒酒-第四课：广搜-【中级班】517编程普及组</h1><p><img src="https://i.loli.net/2021/07/26/XIlbcxZomf79Bve.png" alt="倒酒-第四课：广搜-【中级班】517编程普及组"></p>
+<p>思路：广搜</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/编程/" style="color: #00bcd4">
+                编程
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/题解/" style="color: #03a9f4">
+                题解
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/517普及组/" style="color: #ffa2c4">
+                517普及组
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/dao-jiu-ti-jie/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/mi-gong/">
+        <h2>
+            517迷宫题解
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/7/24
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="迷宫-第四课：广搜-【中级班】517编程普及组"><a href="#迷宫-第四课：广搜-【中级班】517编程普及组" class="headerlink" title="迷宫-第四课：广搜-【中级班】517编程普及组"></a>迷宫-第四课：广搜-【中级班】517编程普及组</h1><p><a target="_blank" rel="noopener" href="https://517coding.com/contest/problem?id=498&pid=1#problem-anchor">迷宫-第四课：广搜-【中级班】517编程普及组 </a></p>
+<h2 id="做法1-在队列中记录层的分界线"><a href="#做法1-在队列中记录层的分界线" class="headerlink" title="做法1 - 在队列中记录层的分界线"></a>做法1 - 在队列中记录层的分界线</h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>$ru$记录当前层的最后一个节点，如果被访问到的节点==$ru$ 说明这一层的所有节点都被访问到</p>
+<p>也就说明了这一层的所有节点的子节点（$k+1$层的所有节点）都已入队列，此时$ru$应更新为队尾元素</p>
+<h3 id="易错点"><a href="#易错点" class="headerlink" title="易错点"></a>易错点</h3><p>如果$ru$出现多次应该在最后一次出现时更新$ru$</p>
+<p>即，在入栈的同时就标记被访问过（$a_{i,j}=1$），不是访问到再标记！</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/编程/" style="color: #03a9f4">
+                编程
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/题解/" style="color: #ff7d73">
+                题解
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/517普及组/" style="color: #ffa2c4">
+                517普及组
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/mi-gong/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/liang-dan-yi-xing-su-cai-ji-lei/">
+        <h2>
+            “两弹一星”素材积累
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/6/5
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="两弹一星元勋：钱学森"><a href="#两弹一星元勋：钱学森" class="headerlink" title="两弹一星元勋：钱学森"></a>两弹一星元勋：钱学森</h1><h2 id="两弹一星事迹"><a href="#两弹一星事迹" class="headerlink" title="两弹一星事迹"></a>两弹一星事迹</h2><p>1956年初，钱学森向中共中央、国务院提出《建立我国国防航空工业的意见书》。同时，钱学森组建中国第一个火箭、导弹研究所——国防部第五研究院并担任首任院长。他主持完成了“喷气和火箭技术的建立”规划，参与了近程导弹、中近程导弹和中国第一颗人造地球卫星的研制，直接领导了用中近程导弹运载原子弹“两弹结合”试验，参与制定了中国近程导弹运载原子弹“两弹结合”试验，参与制定了中国第一个星际航空的发展规划，发展建立了工程控制论和系统学等。在钱学森的努力带领下，1964年10月16日中国第一颗原子弹爆炸成功，1967年6月17日中国第一颗氢弹空爆试验成功，1970年4月24日中国第一颗人造卫星发射成功。</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/学习资料/" style="color: #00a596">
+                学习资料
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/语文/" style="color: #ff7d73">
+                语文
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/liang-dan-yi-xing-su-cai-ji-lei/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+             
+<div class="page-current">
+    <div class="prev">
+        
+        <a href="/">
+            <span class="page-num">
+                <i class="fa-solid fa-caret-left fa-fw"></i>
+            </span>
+        </a>
+        
+    </div>
+    <div class="page-index">
+        
+        <span>
+            
+            
+            <a href="/">
+                <span class="page-num">
+                    1
+                </span>
+            </a>
+        </span>
+        
+        <span class="current">
+            2
+        </span>
+        
+        <span>
+            <a href="/page/3/">
+                <span class="page-num">
+                    3
+                </span>
+            </a>
+            
+            
+        </span>
+        
+    </div>
+    <div class="next">
+        
+        <a href="/page/3/ ">
+            <span class="page-num">
+                <i class="fa-solid fa-caret-right fa-fw"></i>
+            </span>
+        </a>
+        
+    </div>
+</div>
+        </div>
+    </div>
+    
+    <div id="home-card">
+        <div id="card-div">
+    <div class="card-style" style="width: 300px">
+        <div class="avatar">
+            <img src="/img/avatar.png " alt="avatar">
+        </div>
+        <div class="name">
+            test19124
+        </div>
+        <div class="descriptions">
+            
+            <div class="description">
+                test19124の小窝
+            </div>
+            
+        </div>
+        <div class="icon-links">
+            
+            <span class="icon-link">
+                <a target="_blank" rel="noopener" href="https://github.com/test19124/">
+                    <i class="fa-brands fa-github fa-fw"></i>
+                </a>
+            </span>
+            
+        </div>
+        <div class="friend-links">
+            
+        </div>
+    </div>
+</div>
+    </div>
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2019 - 2022 test19124の小窝
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @test19124
+        </div>
+        <div></div>
+        <div>由 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 进行驱动 & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX</a> 主题</div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+
+        <!-- 看板娘 -->
+        <script src="/js/pixi.min.js"></script>
+        <script src="/js/live2d.min.js"></script>
+        <script src="/css/live2d.css"></script>
+        <div id="L2dCanvas"></div>
+        <script>
+            var modell = ["lafei_4","dujiaoshou_4","dujiaoshou_4"];
+            var v = new Viewer({
+                width: 240,
+                height: 325,
+                right: "0",
+                bottom: "0",
+                basePath: "/model",
+                role: modell[Math.floor(Math.random()*10)%3],
+                mobile: true,
+            });
+        </script>
+
+        <!-- 流星背景特效 -->
+        <canvas id="background" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1" ></canvas>
+        <script src="/js/background.js"></script>
+    </body>
+</html>

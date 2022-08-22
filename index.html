@@ -1,0 +1,775 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title>Test19124の小窝</title>
+        <meta name="author" content="test19124">
+        <meta name="description" content="QwQ~">
+        <meta name="keywords" content="test19124,lizishuo,test19124の小窝">
+        <link rel="icon" href="/img/avatar.png">
+        <script src="https://cdn.staticfile.org/instant.page/5.1.0/instantpage.min.js" type="module"></script>
+        <script src="https://cdn.staticfile.org/font-awesome/6.1.1/js/all.min.js"></script>
+        
+        <link rel="stylesheet" href="/css/fonts.min.css">
+        <link rel="stylesheet" href="/css/particlex.css">
+        
+        <script src="https://cdn.staticfile.org/vue/3.2.33/vue.global.prod.min.js"></script>
+    <meta name="generator" content="Hexo 5.4.2"></head>
+    <body>
+        <div id="loading" style="height:100vh;width:100vw;position:fixed;display:flex;z-index:200;justify-content:space-between;background:#fff;transition:opacity 0.3s ease-out"><div style="position:fixed;height:100vh;width:100vw;display:flex;justify-content:center;align-items:center"><div id="loadcontent" style="width:50vmin;height:50vmin;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px #a3ddfb;text-align:center"><div><h2>LOADING...</h2><p style="word-break:keep-all">加载过慢请开启缓存(浏览器默认开启)</p><div><img alt="loading" src="/loading.gif"></div></div></div></div></div>
+        <div id="layout">
+            <i data-fa-symbol="calendar-solid" class="fa-solid fa-calendar fa-fw"></i>
+            <i data-fa-symbol="bookmark-solid" class="fa-solid fa-bookmark fa-fw"></i>
+            <i data-fa-symbol="tags-solid" class="fa-solid fa-tags fa-fw"></i>
+            <transition name="into">
+                <div v-show="show_page" style="display: -not-none">
+                    <div id="menu_show">
+                         
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">test19124の小窝</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;主页</span>
+        </a>
+        
+        <a href="/article/guan-yu-zhe-ge-bo-ke">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;关于</span>
+        </a>
+        
+        <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;资料</span>
+        </a>
+        
+        <a href="/tags/%E9%A2%98%E8%A7%A3">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;题解</span>
+        </a>
+        
+    </div>
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
+        <div :class="'title'" @click="menu_show = !menu_show">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;test19124の小窝</span>
+        </div>
+        <transition name="slide">
+        <div class="items" v-show="menu_show">
+            
+            <a href="">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-house fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">主页</div>
+                </div>
+            </a>
+            
+            <a href="article/guan-yu-zhe-ge-bo-ke">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-id-card fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">关于</div>
+                </div>
+            </a>
+            
+            <a href="tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">资料</div>
+                </div>
+            </a>
+            
+            <a href="tags/%E9%A2%98%E8%A7%A3">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">题解</div>
+                </div>
+            </a>
+            
+        </div>
+        </transition>
+    </div>
+</nav>
+                    </div>
+                    <div id="main">
+                        <div id="home-head">
+    <div id="home-background" style="background-image: url(/img/background.jpg)"></div>
+    
+    <div id="home-info" class="home-info" @click="home_click">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>test19124の小窝</h1>
+                <h3></h3>
+                <h5>QwQ~</h5>
+            </div>
+        </span>
+    </div>
+    
+</div>
+
+<div id="home-posts-wrap" class=>
+    <div id="home-posts">
+        <div id="posts">
+            
+
+<div class="post">
+    <a href="/article/ni-zhong-jiu-hui-cheng-wei-guo-lai-ren/">
+        <h2>
+            你终究会成为过来人
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2022/7/29
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="你终究会成为过来人"><a href="#你终究会成为过来人" class="headerlink" title="你终究会成为过来人"></a>你终究会成为过来人</h1><blockquote>
+<p>谨记此文，怀念我过去的时光</p>
+</blockquote>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/article/ni-zhong-jiu-hui-cheng-wei-guo-lai-ren/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/hao-ju-ji-lei/">
+        <h2>
+            好句积累
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2022/7/19
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <ol>
+<li><p>生活是苦难的，我又划着我的断桨出发了！—–博尔赫斯</p>
+</li>
+<li><p>我看见一个男人，前几年他无忧无虑，逍遥自在，现在他一身烟味，两眼无光，满脸憔悴。我很想心疼一下他，于是我伸手摸了一下镜子。（流年）
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/学习资料/" style="color: #ff7d73">
+                学习资料
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/语文/" style="color: #ff7d73">
+                语文
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/hao-ju-ji-lei/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/wang-kai-ling-you-mei-yu-ju/">
+        <h2>
+            王开玲优美语句
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/9/21
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <ol>
+<li><p>沧海一粟，云天一埃。人类，不过是个偶然，不过日光和月光下的一群生命蝌蚪，不过是宇宙恩泽下的一条灵性的小溪，背叛了这一本分，才是悲剧开始。…卑微，乃人类最大的美德。或许也是最后的美德。</p>
+</li>
+<li><p>从易水河到咸阳宫，每一寸都写满了乡愁和永诀。那种无人能代、横空出世的孤独，那种“我不去，谁去？”的剑客豪迈。</p>
+</li>
+<li><p>地址是死的，地点是活的。地址仅仅被用以指示与寻找，地点则用来生活和体验。</p>
+</li>
+</ol>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/学习资料/" style="color: #ffa2c4">
+                学习资料
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/语文/" style="color: #ffa2c4">
+                语文
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/wang-kai-ling-you-mei-yu-ju/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/lin-qing-xuan-you-mei-yu-ju/">
+        <h2>
+            林清玄优美语句
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/9/5
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <ol>
+<li><p>抬起头来，我看见案前的檀香炉，香烟袅袅，飘去不可知的远方，香气在室内盘绕不息。这烟气是不是也飘往极乐世界呢？可是如果没有香炉的承受，接受火炼，檀香的烟气也不可能飞到远方。</p>
+</li>
+<li><p>在时间上、在广大里、在黑暗中、在忧伤深处、在冷漠之际，我们若能时而真挚地对望一眼，知道石心里还有温暖的质地，也就够了</p>
+</li>
+<li><p>在汹涌的波涛与急速的漩涡中，顺流而下的人是不是偶尔抬起头来，发现自己原来只是水上的一个字呢？</p>
+</li>
+</ol>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/学习资料/" style="color: #03a9f4">
+                学习资料
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/语文/" style="color: #00a596">
+                语文
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/lin-qing-xuan-you-mei-yu-ju/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/xuan-ya-zhi-shang-guan-hou-gan/">
+        <h2>
+            悬崖之上观后感
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/8/20
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <p>　　《悬崖之上》这部电影说的是在上世纪30年代，四位经过严格训练的共产党特工小队，在执行“乌特拉”秘密行动时，因为叛徒的出卖，最后深陷险境，最后在敌网中与敌人周旋，宛如在悬崖边上，充满各种惊心动魄……</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/学习资料/" style="color: #ff7d73">
+                学习资料
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/语文/" style="color: #ff7d73">
+                语文
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/xuan-ya-zhi-shang-guan-hou-gan/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/kun-chong-ji-du-hou-gan/">
+        <h2>
+            昆虫记读后感
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/8/20
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <p>　　“我开辟了荒石园来研究活生生的昆虫。在这里，我可以不必担心路人的打扰，可以与蜂交谈，也无需耗费时间去远行，无需急不可待的奔走，我可以编制进攻计划，设置埋伏陷阱，每天时时刻刻观察实验效果。这就是我的愿望，我一直苦苦追求的梦想。”没错，这就是法布尔的《昆虫记》。</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/学习资料/" style="color: #00a596">
+                学习资料
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/语文/" style="color: #00a596">
+                语文
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/kun-chong-ji-du-hou-gan/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/da-nian-gao/">
+        <h2>
+            打年糕
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/8/20
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <p>　　年糕，是我们中华民族的传统食品，属于农历新年的应时食品，是一种不可多得的美味，现在我就把过程介绍给你听听吧！</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/学习资料/" style="color: #00a596">
+                学习资料
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/语文/" style="color: #00bcd4">
+                语文
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/da-nian-gao/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/517-lei-da-ti-jie/">
+        <h2>
+            517雷达题解
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/8/10
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="雷达-第二课-贪心算法-区间覆盖-字典序-2020最新版提高组初级课程"><a href="#雷达-第二课-贪心算法-区间覆盖-字典序-2020最新版提高组初级课程" class="headerlink" title="雷达-第二课: 贪心算法-区间覆盖/字典序-2020最新版提高组初级课程"></a>雷达-第二课: 贪心算法-区间覆盖/字典序-2020最新版提高组初级课程</h1><p><a target="_blank" rel="noopener" href="https://517coding.com/p/4000">题目链接</a></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>用勾股定理求出区间</p>
+<p>转化成区间覆盖问题</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/编程/" style="color: #ffa2c4">
+                编程
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/题解/" style="color: #ffa2c4">
+                题解
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/517提高组/" style="color: #ff7d73">
+                517提高组
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/517-lei-da-ti-jie/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/517-zui-da-yu-shu-ti-jie/">
+        <h2>
+            517最大余数题解
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/8/10
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="最大余数-第一课-枚举技巧-状压-折半-尺取法-2020最新版提高组初级课程"><a href="#最大余数-第一课-枚举技巧-状压-折半-尺取法-2020最新版提高组初级课程" class="headerlink" title="最大余数-第一课: 枚举技巧-状压/折半/尺取法-2020最新版提高组初级课程"></a>最大余数-第一课: 枚举技巧-状压/折半/尺取法-2020最新版提高组初级课程</h1><p><a target="_blank" rel="noopener" href="https://517coding.com/p/3980">题目链接</a></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>折半 + 二进制枚举</p>
+<p>注意b数组要排个序~</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/编程/" style="color: #ffa2c4">
+                编程
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/题解/" style="color: #03a9f4">
+                题解
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/517提高组/" style="color: #ffa2c4">
+                517提高组
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/517-zui-da-yu-shu-ti-jie/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+    <a href="/article/517-zui-xiao-zi-dian-xu-ti-jie/">
+        <h2>
+            517最小字典序题解
+        </h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2021/8/10
+        </span>
+    </div>
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            <h1 id="最大余数-第二课-贪心算法-区间覆盖-字典序-2020最新版提高组初级课程"><a href="#最大余数-第二课-贪心算法-区间覆盖-字典序-2020最新版提高组初级课程" class="headerlink" title="最大余数-第二课: 贪心算法-区间覆盖/字典序-2020最新版提高组初级课程"></a>最大余数-第二课: 贪心算法-区间覆盖/字典序-2020最新版提高组初级课程</h1><p><a target="_blank" rel="noopener" href="https://517coding.com/p/3980">题目链接</a></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>两边取小的往内贪心</p>
+<p>如果相同则比较下一层大小</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/编程/" style="color: #00a596">
+                编程
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/题解/" style="color: #ff7d73">
+                题解
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/517提高组/" style="color: #03a9f4">
+                517提高组
+            </a>
+        </span>
+        
+    </div>
+    <a href="/article/517-zui-xiao-zi-dian-xu-ti-jie/" class="go-post">
+        阅读全文
+    </a>
+</div>
+
+             
+<div class="page-current">
+    <div class="prev">
+        
+    </div>
+    <div class="page-index">
+        
+        <span class="current">
+            1
+        </span>
+        
+        <span>
+            <a href="/page/2/">
+                <span class="page-num">
+                    2
+                </span>
+            </a>
+            
+            <a href="/page/3">
+                <span class="page-num">
+                    3
+                </span>
+            </a>
+            
+            
+        </span>
+        
+    </div>
+    <div class="next">
+        
+        <a href="/page/2/ ">
+            <span class="page-num">
+                <i class="fa-solid fa-caret-right fa-fw"></i>
+            </span>
+        </a>
+        
+    </div>
+</div>
+        </div>
+    </div>
+    
+    <div id="home-card">
+        <div id="card-div">
+    <div class="card-style" style="width: 300px">
+        <div class="avatar">
+            <img src="/img/avatar.png " alt="avatar">
+        </div>
+        <div class="name">
+            test19124
+        </div>
+        <div class="descriptions">
+            
+            <div class="description">
+                test19124の小窝
+            </div>
+            
+        </div>
+        <div class="icon-links">
+            
+            <span class="icon-link">
+                <a target="_blank" rel="noopener" href="https://github.com/test19124/">
+                    <i class="fa-brands fa-github fa-fw"></i>
+                </a>
+            </span>
+            
+        </div>
+        <div class="friend-links">
+            
+        </div>
+    </div>
+</div>
+    </div>
+    
+</div>
+                         
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2019 - 2022 test19124の小窝
+            <span class="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            @test19124
+        </div>
+        <div></div>
+        <div>由 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 进行驱动 & <a
+                target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX</a> 主题</div>
+        
+    </div>
+</footer>
+                    </div>
+                </div>
+            </transition>
+            <div id="img_show">
+                <img id="img_content" alt="img_show">
+            </div>
+        </div>
+        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
+        <script src="/js/particlex.js"></script>
+        <script src="/js/showimg.js"></script>
+        
+
+
+        <!-- 看板娘 -->
+        <script src="/js/pixi.min.js"></script>
+        <script src="/js/live2d.min.js"></script>
+        <script src="/css/live2d.css"></script>
+        <div id="L2dCanvas"></div>
+        <script>
+            var modell = ["lafei_4","dujiaoshou_4","dujiaoshou_4"];
+            var v = new Viewer({
+                width: 240,
+                height: 325,
+                right: "0",
+                bottom: "0",
+                basePath: "/model",
+                role: modell[Math.floor(Math.random()*10)%3],
+                mobile: true,
+            });
+        </script>
+
+        <!-- 流星背景特效 -->
+        <canvas id="background" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1" ></canvas>
+        <script src="/js/background.js"></script>
+    </body>
+</html>
