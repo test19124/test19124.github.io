@@ -126,14 +126,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/学习资料/" style="color: #00bcd4">
+                <a href="/tags/学习资料/" style="color: #ffa2c4">
                     学习资料
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/语文/" style="color: #03a9f4">
+                <a href="/tags/语文/" style="color: #00bcd4">
                     语文
                 </a>
             </span>
@@ -213,24 +213,28 @@
         <tr>
             <td>
                 <ul class="post-copyright">
-                    <li class="post-copyright-author"><strong>本文作者：</strong><a href="http://www.lizishuo.ml/">test19124</a></li>
+                    <li class="post-copyright-author"><strong>本文作者：</strong><a href="http://www.lizishuo.ml/">test19124 | “读书”专题整理</a></li>
                     <li class="post-copyright-link"><strong>本文链接：</strong><a href="http://www.lizishuo.ml/article/du-shu-zhuan-ti-zheng-li/">http://www.lizishuo.ml/article/du-shu-zhuan-ti-zheng-li/</a></li>
                     <li class="post-copyright-license"><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa-brands fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！</li>
                 </ul>
             </td>
             <td style="width: 130px;" id="qrcode">
+                <img src="/img/onclickQRcode.png" onclick="putQRcode()"/>
             </td>
         </tr>
     </table>
     <script type="text/javascript">
-        new QRCode(document.getElementById("qrcode"), {
-            text: "http://www.lizishuo.ml/article/du-shu-zhuan-ti-zheng-li/",
-            width: 128,
-            height: 128,
-            colorDark : "#000000",
-            colorLight : "#ffffff",
-            correctLevel : QRCode.CorrectLevel.H
-        });
+        function putQRcode() {
+            document.getElementById("qrcode").innerHTML = "";
+            var k = new QRCode(document.getElementById("qrcode"), {
+                text: "http://www.lizishuo.ml/article/du-shu-zhuan-ti-zheng-li/",
+                width: 128,
+                height: 128,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        }
     </script>
 
     

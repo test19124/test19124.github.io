@@ -133,14 +133,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/题解/" style="color: #00a596">
+                <a href="/tags/题解/" style="color: #00bcd4">
                     题解
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/517提高组/" style="color: #ff7d73">
+                <a href="/tags/517提高组/" style="color: #03a9f4">
                     517提高组
                 </a>
             </span>
@@ -227,24 +227,28 @@ int main() &#123;
         <tr>
             <td>
                 <ul class="post-copyright">
-                    <li class="post-copyright-author"><strong>本文作者：</strong><a href="http://www.lizishuo.ml/">test19124</a></li>
+                    <li class="post-copyright-author"><strong>本文作者：</strong><a href="http://www.lizishuo.ml/">test19124 | 517最大余数题解</a></li>
                     <li class="post-copyright-link"><strong>本文链接：</strong><a href="http://www.lizishuo.ml/article/517-zui-da-yu-shu-ti-jie/">http://www.lizishuo.ml/article/517-zui-da-yu-shu-ti-jie/</a></li>
                     <li class="post-copyright-license"><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa-brands fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！</li>
                 </ul>
             </td>
             <td style="width: 130px;" id="qrcode">
+                <img src="/img/onclickQRcode.png" onclick="putQRcode()"/>
             </td>
         </tr>
     </table>
     <script type="text/javascript">
-        new QRCode(document.getElementById("qrcode"), {
-            text: "http://www.lizishuo.ml/article/517-zui-da-yu-shu-ti-jie/",
-            width: 128,
-            height: 128,
-            colorDark : "#000000",
-            colorLight : "#ffffff",
-            correctLevel : QRCode.CorrectLevel.H
-        });
+        function putQRcode() {
+            document.getElementById("qrcode").innerHTML = "";
+            var k = new QRCode(document.getElementById("qrcode"), {
+                text: "http://www.lizishuo.ml/article/517-zui-da-yu-shu-ti-jie/",
+                width: 128,
+                height: 128,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        }
     </script>
 
     
