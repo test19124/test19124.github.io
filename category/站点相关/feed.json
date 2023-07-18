@@ -1,0 +1,38 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "test19124 • All posts by \"站点相关\" category",
+    "description": "lzs的博客",
+    "home_page_url": "https://test19124.github.io",
+    "items": [
+        {
+            "id": "https://test19124.github.io/2023/07/16/friends/",
+            "url": "https://test19124.github.io/2023/07/16/friends/",
+            "title": "友情链接",
+            "date_published": "2023-07-16T15:13:46.000Z",
+            "content_html": "<h1 id=\"如何添加友链\"><a class=\"markdownIt-Anchor\" href=\"#如何添加友链\">#</a> 如何添加友链</h1>\n<p>添加本站链接后，评论 / 向邮箱 <code>test19124@sina.com</code>  发送如下内容：</p>\n<pre><code>- site: #站点名称\n  owner: #管理员名字\n  url: #站点网址\n  desc: #简短描述\n  image: #一张图片\n  color: #颜色代码\n</code></pre>\n<h1 id=\"友链列表\"><a class=\"markdownIt-Anchor\" href=\"#友链列表\">#</a> 友链列表</h1>\n<div class=\"links\"><div class=\"item\" title=\"Kaitaku\" style=\"--block-color:#00BFFF;\"><span class=\"exturl image\" data-url=\"aHR0cHM6Ly93d3cua2FpdGFrdS54eXo=\" data-background-image=\"https://www.kaitaku.xyz/assets/avatar.jpg\"></span>\n          <div class=\"info\">\n          <span class=\"exturl title\" data-url=\"aHR0cHM6Ly93d3cua2FpdGFrdS54eXo=\">望月阁</span>\n          <p class=\"desc\">一个萌新的学习笔记</p>\n          </div></div></div>\n<h1 id=\"友链要求\"><a class=\"markdownIt-Anchor\" href=\"#友链要求\">#</a> 友链要求</h1>\n<ol>\n<li>网站不能存在违反中国法律的内容</li>\n<li>网站不能是纯广告性质 (本人主观判断) 的网站</li>\n<li>网站不能存在大量令人不适的内容</li>\n<li>不能是盗版资源 (或有争议的资源) 为主的资源站</li>\n</ol>\n",
+            "tags": [
+                "Friends"
+            ]
+        },
+        {
+            "id": "https://test19124.github.io/2020/12/04/about/",
+            "url": "https://test19124.github.io/2020/12/04/about/",
+            "title": "关于这个博客",
+            "date_published": "2020-12-04T14:57:55.000Z",
+            "content_html": "<p>QwQ , 这是 test19124 的小博客</p>\n<span id=\"more\"></span>\n<p><img data-src=\"https://img.paulzzh.tech/touhou/random\" alt=\"\"></p>\n",
+            "tags": [
+                "About"
+            ]
+        },
+        {
+            "id": "https://test19124.github.io/2019/09/19/hello-world/",
+            "url": "https://test19124.github.io/2019/09/19/hello-world/",
+            "title": "Hello World",
+            "date_published": "2019-09-19T05:15:34.000Z",
+            "content_html": "<p>Welcome to <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvLw==\">Hexo</span>! This is your very first post. Check <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3Mv\">documentation</span> for more info. If you get any problems when using Hexo, you can find the answer in <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3MvdHJvdWJsZXNob290aW5nLmh0bWw=\">troubleshooting</span> or you can ask me on <span class=\"exturl\" data-url=\"aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL2lzc3Vlcw==\">GitHub</span>.</p>\n<span id=\"more\"></span>\n<h2 id=\"quick-start\"><a class=\"markdownIt-Anchor\" href=\"#quick-start\">#</a> Quick Start</h2>\n<h3 id=\"create-a-new-post\"><a class=\"markdownIt-Anchor\" href=\"#create-a-new-post\">#</a> Create a new post</h3>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>$ hexo new <span class=\"token string\">\"My New Post\"</span></pre></td></tr></table></figure><p>More info: <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvd3JpdGluZy5odG1s\">Writing</span></p>\n<h3 id=\"run-server\"><a class=\"markdownIt-Anchor\" href=\"#run-server\">#</a> Run server</h3>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>$ hexo server</pre></td></tr></table></figure><p>More info: <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvc2VydmVyLmh0bWw=\">Server</span></p>\n<h3 id=\"generate-static-files\"><a class=\"markdownIt-Anchor\" href=\"#generate-static-files\">#</a> Generate static files</h3>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>$ hexo generate</pre></td></tr></table></figure><p>More info: <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZ2VuZXJhdGluZy5odG1s\">Generating</span></p>\n<h3 id=\"deploy-to-remote-sites\"><a class=\"markdownIt-Anchor\" href=\"#deploy-to-remote-sites\">#</a> Deploy to remote sites</h3>\n<figure class=\"highlight bash\"><figcaption data-lang=\"bash\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre>$ hexo deploy</pre></td></tr></table></figure><p>More info: <span class=\"exturl\" data-url=\"aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudC5odG1s\">Deployment</span></p>\n",
+            "tags": [
+                "Test"
+            ]
+        }
+    ]
+}

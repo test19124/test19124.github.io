@@ -1,0 +1,599 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>test19124 • Posts by &#34;517普及组&#34; tag</title>
+        <link>https://test19124.github.io</link>
+        <description>lzs的博客</description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 07 Aug 2021 14:37:42 +0800</pubDate>
+        <lastBuildDate>Sat, 07 Aug 2021 14:37:42 +0800</lastBuildDate>
+        <category>517普及组</category>
+        <category>517提高组</category>
+        <category>About</category>
+        <category>写作素材</category>
+        <category>提纲</category>
+        <category>DEBUG</category>
+        <category>Friends</category>
+        <category>资料</category>
+        <category>Test</category>
+        <category>读后感</category>
+        <category>随笔</category>
+        <item>
+            <guid isPermalink="true">https://test19124.github.io/2021/08/07/517-fu-gai-shu-zhou-ti-jie/</guid>
+            <title>517覆盖数轴题解</title>
+            <link>https://test19124.github.io/2021/08/07/517-fu-gai-shu-zhou-ti-jie/</link>
+            <category>517普及组</category>
+            <pubDate>Sat, 07 Aug 2021 14:37:42 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;覆盖数轴-第二课贪心算法-中级班517编程普及组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#覆盖数轴-第二课贪心算法-中级班517编程普及组&#34;&gt;#&lt;/a&gt; 覆盖数轴 - 第二课：贪心算法 -【中级班】517 编程普及组&lt;/h1&gt;
+&lt;h2 id=&#34;描述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#描述&#34;&gt;#&lt;/a&gt; 描述&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有一个长度为 m 的数轴，现在有 n 个区间，每个区间有一个左右端点，现在需要选择最少的区间，覆盖整个数轴。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h2 id=&#34;输入&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#输入&#34;&gt;#&lt;/a&gt; 输入&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;第一行两个整数 n 和 m&lt;br&gt;
+ 接下来 n 行，每行两个整数，表示区间。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;输出&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#输出&#34;&gt;#&lt;/a&gt; 输出&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;输出最少的区间个数，覆盖整个数轴。如果无法覆盖，输出 - 1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;样例&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#样例&#34;&gt;#&lt;/a&gt; 样例&lt;/h2&gt;
+&lt;h3 id=&#34;输入1&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#输入1&#34;&gt;#&lt;/a&gt; 输入 #1&lt;/h3&gt;
+&lt;figure class=&#34;highlight txt&#34;&gt;&lt;figcaption data-lang=&#34;txt&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;5 6&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;1 3&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;2 4&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;3 5&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;5 6&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;1 4&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;输出1&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#输出1&#34;&gt;#&lt;/a&gt; 输出 #1&lt;/h3&gt;
+&lt;figure class=&#34;highlight txt&#34;&gt;&lt;figcaption data-lang=&#34;txt&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;2&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;思路&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#思路&#34;&gt;#&lt;/a&gt; 思路&lt;/h2&gt;
+&lt;p&gt;贪心，先按右侧端点排序&lt;br&gt;
+之后再取 左侧端点 &amp;lt;= 右侧端点 + 1 的所有线段中右侧端点最远的点&lt;br&gt;
+达到 m 结束&lt;/p&gt;
+&lt;h2 id=&#34;易错点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#易错点&#34;&gt;#&lt;/a&gt; 易错点&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;左侧端点 &amp;lt;= 右侧端点 &lt;strong&gt;+1&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;取所有线段中右侧端点最远的点&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#代码&#34;&gt;#&lt;/a&gt; 代码&lt;/h2&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;figcaption data-lang=&#34;C++&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;bits/stdc++.h&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;namespace&lt;/span&gt; std&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; n&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;m&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;token class-name&#34;&gt;qj&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; s&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;t&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; a&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;100010&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;qj a&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;qj b&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;a&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;s&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;b&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;s&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; a&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;t&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;b&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;t&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; a&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;s&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;b&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;s&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  cin&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;n&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;m&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;&amp;lt;=&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    cin&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;a&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;s&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;a&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;t&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token function&#34;&gt;sort&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;a&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;a&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;n&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;cmp&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; t&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;ans&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;Max&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;x&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;flag&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;&amp;lt;=&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    Max&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;a&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;x&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;s&lt;span class=&#34;token operator&#34;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;t&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt;x&lt;span class=&#34;token operator&#34;&gt;&amp;lt;=&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      Max&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;Max&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;a&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;x&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;t&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      x&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    t&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;Max&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    ans&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;t&lt;span class=&#34;token operator&#34;&gt;&gt;=&lt;/span&gt;m&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      flag&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token keyword&#34;&gt;break&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;flag&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;ans&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;endl&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;36&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;endl&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;37&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;38&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;39&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://test19124.github.io/2021/08/06/517-you-fu-huan-zui-duan-lu-jing-ti-jie/</guid>
+            <title>517有负环最短路径题解</title>
+            <link>https://test19124.github.io/2021/08/06/517-you-fu-huan-zui-duan-lu-jing-ti-jie/</link>
+            <category>517普及组</category>
+            <pubDate>Fri, 06 Aug 2021 17:14:51 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;有负环最短路径-第十课最短路径-中级班517编程普及组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#有负环最短路径-第十课最短路径-中级班517编程普及组&#34;&gt;#&lt;/a&gt; 有负环最短路径 - 第十课：最短路径 -【中级班】517 编程普及组&lt;/h1&gt;
+&lt;h2 id=&#34;描述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#描述&#34;&gt;#&lt;/a&gt; 描述&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;给定一个有向图，求 1 到 n 的最短路径。&lt;br&gt;
+可以判断图中是否有负环。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h2 id=&#34;输入&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#输入&#34;&gt;#&lt;/a&gt; 输入&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;第一行两个整数 n 和 m，表示点数和边数。&lt;br&gt;
+接下来 m 行，每行 3 个整数，表示一条有向边。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;输出&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#输出&#34;&gt;#&lt;/a&gt; 输出&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果图中有负环，输出 circle&lt;br&gt;
+ 如果没有负环，但是从 1 无法到达 n，输出 can’t arrive!&lt;br&gt;
+ 否则输出 1 到 n 的最短距离&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;样例&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#样例&#34;&gt;#&lt;/a&gt; 样例&lt;/h2&gt;
+&lt;h3 id=&#34;输入1&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#输入1&#34;&gt;#&lt;/a&gt; 输入 #1&lt;/h3&gt;
+&lt;figure class=&#34;highlight txt&#34;&gt;&lt;figcaption data-lang=&#34;txt&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;3 3&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;1 3 3&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;1 2 1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;2 3 1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;输出1&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#输出1&#34;&gt;#&lt;/a&gt; 输出 #1&lt;/h3&gt;
+&lt;figure class=&#34;highlight txt&#34;&gt;&lt;figcaption data-lang=&#34;txt&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;2&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;输入2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#输入2&#34;&gt;#&lt;/a&gt; 输入 #2&lt;/h3&gt;
+&lt;figure class=&#34;highlight txt&#34;&gt;&lt;figcaption data-lang=&#34;txt&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;3 3&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;1 2 1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;2 1 -2&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;2 3 1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;输出2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#输出2&#34;&gt;#&lt;/a&gt; 输出 #2&lt;/h3&gt;
+&lt;figure class=&#34;highlight txt&#34;&gt;&lt;figcaption data-lang=&#34;txt&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;circle&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;输入3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#输入3&#34;&gt;#&lt;/a&gt; 输入 #3&lt;/h3&gt;
+&lt;figure class=&#34;highlight txt&#34;&gt;&lt;figcaption data-lang=&#34;txt&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;3 2&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;1 2 1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;2 1 1&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;输出3&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#输出3&#34;&gt;#&lt;/a&gt; 输出 #3&lt;/h3&gt;
+&lt;figure class=&#34;highlight txt&#34;&gt;&lt;figcaption data-lang=&#34;txt&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;can&#39;t arrive!&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h2 id=&#34;提示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#提示&#34;&gt;#&lt;/a&gt; 提示&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;n≤200&lt;br&gt;
+m≤2000&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;思路&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#思路&#34;&gt;#&lt;/a&gt; 思路&lt;/h2&gt;
+&lt;p&gt;这题就是标准负环最短路&lt;/p&gt;
+&lt;h2 id=&#34;易错点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#易错点&#34;&gt;#&lt;/a&gt; 易错点&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;中转边必须有边才能转移： &lt;code&gt;if(g[u][i]!=998244353&amp;amp;&amp;amp;g[i][v]!=998244353)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;g[u][v]&lt;/code&gt;  可以等于  &lt;code&gt;998244353&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#代码&#34;&gt;#&lt;/a&gt; 代码&lt;/h2&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;figcaption data-lang=&#34;C++&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token macro property&#34;&gt;&lt;span class=&#34;token directive-hash&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;token directive keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&amp;lt;bits/stdc++.h&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;namespace&lt;/span&gt; std&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; g&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;210&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;210&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; n&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;m&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  cin&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;n&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;m&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;&amp;lt;=&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; j&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; j&lt;span class=&#34;token operator&#34;&gt;&amp;lt;=&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; j&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;i&lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        g&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;j&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;998244353&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; u&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;v&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;w&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;&amp;lt;=&lt;/span&gt;m&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    cin&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;u&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;v&lt;span class=&#34;token operator&#34;&gt;&gt;&gt;&lt;/span&gt;w&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    g&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;u&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;v&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token function&#34;&gt;min&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;w&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;u&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;v&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;&amp;lt;=&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; i&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; u&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; u&lt;span class=&#34;token operator&#34;&gt;&amp;lt;=&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; u&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;23&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token keyword&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;int&lt;/span&gt; v&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; v&lt;span class=&#34;token operator&#34;&gt;&amp;lt;=&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; v&lt;span class=&#34;token operator&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;24&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;u&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;998244353&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;v&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;!=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;998244353&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;25&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;u&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;v&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;u&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;v&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;26&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;            g&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;u&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;v&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;u&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;+&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;i&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;v&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;27&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;          &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;28&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;29&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;30&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;u&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;u&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;31&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;circle&#34;&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;endl&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;32&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;33&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;      &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;34&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;35&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;36&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;998244353&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;37&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;can&#39;t arrive!\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;38&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;39&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    cout&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;g&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;n&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#34;\n&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;40&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;41&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;42&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://test19124.github.io/2021/08/01/517-pin-tu-you-xi-ti-jie/</guid>
+            <title>517拼图游戏题解</title>
+            <link>https://test19124.github.io/2021/08/01/517-pin-tu-you-xi-ti-jie/</link>
+            <category>517普及组</category>
+            <pubDate>Sun, 01 Aug 2021 10:55:04 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;拼图游戏-第四课广搜-中级班517编程普及组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#拼图游戏-第四课广搜-中级班517编程普及组&#34;&gt;#&lt;/a&gt; 拼图游戏 - 第四课：广搜 -【中级班】517 编程普及组&lt;/h1&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/07/25/4xMjbA9NZi2sHVD.png&#34; alt=&#34;拼图游戏-第四课：广搜-【中级班】517编程普及组&#34;&gt;&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+
+int mod=1000007;
+int ji[1000010];
+int top;
+int me[1000010],to[1000010];
+
+int X[4]=&amp;#123;0,1&amp;#125;;
+int Y[4]=&amp;#123;1,0&amp;#125;;
+
+struct zb &amp;#123;
+  int a[5][5];
+  int ans;
+&amp;#125;;
+queue&amp;lt;zb&amp;gt;q;
+
+void out(int a[5][5]) &amp;#123;
+  for(int i=1;i&amp;lt;=3;i++) &amp;#123;
+    for(int j=1;j&amp;lt;=3;j++) &amp;#123;
+      cout&amp;lt;&amp;lt;a[i][j];
+    &amp;#125;
+    cout&amp;lt;&amp;lt;endl;
+  &amp;#125;
+&amp;#125;
+
+void outji() &amp;#123;
+  cout&amp;lt;&amp;lt;top&amp;lt;&amp;lt;endl;
+  for(int i=0;i&amp;lt;mod;i++) &amp;#123;
+    if(ji[i]) &amp;#123;
+      for(int j=ji[i];;j=to[j]) &amp;#123;
+        cout&amp;lt;&amp;lt;me[j]&amp;lt;&amp;lt;&amp;quot;--&amp;gt;&amp;quot;;
+        if(to[j]==0) &amp;#123;
+          break;
+        &amp;#125;
+      &amp;#125;
+      cout&amp;lt;&amp;lt;ji[i]&amp;lt;&amp;lt;endl;
+    &amp;#125;
+  &amp;#125;
+&amp;#125;
+
+int copy(int &amp;amp;a,int b[5][5]) &amp;#123;
+  a=0;
+  for(int i=1;i&amp;lt;=3;i++) &amp;#123;
+    for(int j=1;j&amp;lt;=3;j++) &amp;#123;
+      a=a*10+b[i][j];
+    &amp;#125;
+  &amp;#125;
+  return a;
+&amp;#125;
+
+bool find(int x) &amp;#123;
+  for(int i=ji[x%mod];to[i]!=0;i=to[i]) &amp;#123;
+    if(me[i]==x) &amp;#123;
+      return true;
+    &amp;#125;
+  &amp;#125;
+  return false;
+&amp;#125;
+
+void in(int x) &amp;#123;
+  if(ji[x%mod]==0) &amp;#123;
+    top++;
+    ji[x%mod]=top;
+    me[top]=x;
+    return;
+  &amp;#125;
+  for(int i=ji[x%mod];;i=to[i]) &amp;#123;
+    if(to[i]==0) &amp;#123;
+      top++;
+      to[i]=top;
+      me[top]=x;
+      return;
+    &amp;#125;
+  &amp;#125;
+&amp;#125;
+
+zb push(int a[5][5],int ans) &amp;#123;
+  zb x;
+  for(int i=1;i&amp;lt;=3;i++) &amp;#123;
+    for(int j=1;j&amp;lt;=3;j++) &amp;#123;
+      x.a[i][j]=a[i][j];
+    &amp;#125;
+  &amp;#125;
+  x.ans=ans;
+  q.push(x);
+  return x;
+&amp;#125;
+
+int bfs(int a[5][5]) &amp;#123;
+  
+  zb k;
+  int h;
+  
+  push(a,0);
+  in(copy(h,a));
+  
+  while(!q.empty()) &amp;#123;
+  
+    k=q.front();
+    q.pop();
+  
+    copy(h,k.a);
+    if(h==12345678) &amp;#123;
+      return k.ans;
+    &amp;#125;
+
+    //cout&amp;lt;&amp;lt;k.ans&amp;lt;&amp;lt;endl;
+    //out(k.a);
+  
+    for(int x=1;x&amp;lt;=3;x++) &amp;#123;
+      for(int y=1;y&amp;lt;=3;y++) &amp;#123;
+        for(int i=0;i&amp;lt;2;i++) &amp;#123;
+          if(x+X[i]&amp;gt;3||y+Y[i]&amp;gt;3);
+          else &amp;#123;
+            swap(k.a[x][y],k.a[x+X[i]][y+Y[i]]);
+            copy(h,k.a);
+            if(!find(h)) &amp;#123;
+              in(h);
+              push(k.a,k.ans+1);
+            &amp;#125;
+            swap(k.a[x][y],k.a[x+X[i]][y+Y[i]]);
+          &amp;#125;
+        &amp;#125;
+        /*
+        if(find()) &amp;#123;
+          return;
+        &amp;#125;
+        for(int i=0;i&amp;lt;4;i++) &amp;#123;
+          if(x+X[i]&amp;lt;=0||y+Y[i]&amp;lt;=0||x+X[i]&amp;gt;3||y+Y[i]&amp;gt;3||vis[x+X[i]][y+Y[i]]);
+          else &amp;#123;
+            vis[x][y]=true;
+            dfs(x+X[i],y+Y[i]);
+            swap(a[x][y],a[x+X[i]][y+Y[i]]);
+            //cout&amp;lt;&amp;lt;&amp;quot;swap &amp;quot;&amp;lt;&amp;lt;a[x][y]&amp;lt;&amp;lt;&amp;quot; and &amp;quot;&amp;lt;&amp;lt;a[x+X[i]][y+Y[i]]&amp;lt;&amp;lt;endl;
+            dfs(x+X[i],y+Y[i],ansx+1);
+            swap(a[x][y],a[x+X[i]][y+Y[i]]);
+            vis[x][y]=false;
+          &amp;#125;
+        &amp;#125;
+        if(l==k) &amp;#123;
+          l=q.back();
+          ans++;
+        &amp;#125;
+        */
+      &amp;#125;
+    &amp;#125;
+    //outji();
+  &amp;#125;
+  return 0;
+&amp;#125;
+
+int main() &amp;#123;
+  
+  int x;
+  int a[5][5];
+  
+  for(int i=1;i&amp;lt;=3;i++) &amp;#123;
+    cin&amp;gt;&amp;gt;x;
+    for(int j=3;j&amp;gt;=1;j--) &amp;#123;
+      a[i][j]=x%10;
+      x/=10;
+    &amp;#125;
+  &amp;#125;
+  
+  int ans;
+  copy(ans,a);
+  if(ans==12345678) &amp;#123;
+    cout&amp;lt;&amp;lt;0&amp;lt;&amp;lt;endl;
+  &amp;#125; else &amp;#123;
+    cout&amp;lt;&amp;lt;bfs(a)&amp;lt;&amp;lt;endl;
+  &amp;#125;
+  
+  return 0;
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://test19124.github.io/2021/08/01/dao-jiu-ti-jie/</guid>
+            <title>517倒酒题解</title>
+            <link>https://test19124.github.io/2021/08/01/dao-jiu-ti-jie/</link>
+            <category>517普及组</category>
+            <pubDate>Sun, 01 Aug 2021 10:50:11 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;倒酒-第四课广搜-中级班517编程普及组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#倒酒-第四课广搜-中级班517编程普及组&#34;&gt;#&lt;/a&gt; 倒酒 - 第四课：广搜 -【中级班】517 编程普及组&lt;/h1&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://i.loli.net/2021/07/26/XIlbcxZomf79Bve.png&#34; alt=&#34;倒酒-第四课：广搜-【中级班】517编程普及组&#34;&gt;&lt;/p&gt;
+&lt;p&gt;思路：广搜&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std; 
+
+int a[3];
+int vis[160][160][160]; 
+
+struct jgt &amp;#123;
+  int a[3];
+  int ans;
+&amp;#125;; 
+queue&amp;lt;jgt&amp;gt;q;
+
+bool find(jgt f) &amp;#123; // 均分
+  if(f.a[0]==f.a[1]&amp;amp;&amp;amp;f.a[2]==0)
+    return true;
+  if(f.a[0]==f.a[2]&amp;amp;&amp;amp;f.a[1]==0)
+    return true;
+  if(f.a[1]==f.a[2]&amp;amp;&amp;amp;f.a[0]==0)
+    return true;
+  return false;
+&amp;#125; 
+
+jgt push(int a,int b,int c,int ans) &amp;#123; // 入队
+  jgt x;
+  vis[a][b][c]=true;
+  x.a[0]=a;
+  x.a[1]=b;
+  x.a[2]=c;
+  x.ans=ans;
+  q.push(x);
+  return x;
+&amp;#125;
+
+void copy(jgt &amp;amp;a,jgt b) &amp;#123; // 拷贝
+  for(int i=0;i&amp;lt;3;i++) &amp;#123;
+    a.a[i]=b.a[i];
+  &amp;#125;
+  a.ans=b.ans;
+&amp;#125;
+
+void bfs() &amp;#123;
+  jgt k,l;  // 定义
+  push(a[0],0,0,0); // 初始数据入队
+  while(!q.empty()) &amp;#123; // 队列不为空
+    k=q.front(); // 取出队首
+    q.pop(); // 删除队首
+    for(int i=0; i&amp;lt;3; i++) &amp;#123; // 枚举准备倒的杯
+      for(int j=0; j&amp;lt;3; j++) &amp;#123; // 枚举被倒的杯
+        if(i!=j) &amp;#123; // 不能倒给自己
+          if(find(k)) &amp;#123; // 如果当前已均分
+            cout&amp;lt;&amp;lt;k.ans&amp;lt;&amp;lt;endl; // 输出
+            return;// 结束函数
+          &amp;#125;
+          copy(l,k); // 拷贝k到l
+          int x=a[j]-l.a[j]; // x=原先被倒的杯里的酒-现在这个杯里的酒
+          if(l.a[i]&amp;gt;=x) &amp;#123; // 如果溢出
+            l.a[j]=a[j]; // 灌满被倒的杯
+            l.a[i]-=x; // 剩余的酒留在杯中
+          &amp;#125; else &amp;#123; // 否则
+            l.a[j]+=l.a[i]; // 全倒过去
+            l.a[i]=0; // 原来的杯清零
+          &amp;#125;
+          l.ans++; // 倒的次数++
+          if(vis[l.a[0]][l.a[1]][l.a[2]]==false) &amp;#123; // 当前状态没有被记录
+            vis[l.a[0]][l.a[1]][l.a[2]]=true; // 记录当前状态
+            q.push(l); // 记录入队
+          &amp;#125;
+        &amp;#125;
+      &amp;#125;
+    &amp;#125;
+  &amp;#125;
+  //没办法平均分
+  cout&amp;lt;&amp;lt;&amp;quot;NO&amp;quot;&amp;lt;&amp;lt;endl;
+&amp;#125;
+
+int main() &amp;#123;
+  for(int i=0;i&amp;lt;3;i++) &amp;#123;
+    cin&amp;gt;&amp;gt;a[i];
+  &amp;#125;
+  bfs();
+  return 0;
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://test19124.github.io/2021/07/24/mi-gong/</guid>
+            <title>517迷宫题解</title>
+            <link>https://test19124.github.io/2021/07/24/mi-gong/</link>
+            <category>517普及组</category>
+            <pubDate>Sat, 24 Jul 2021 17:15:46 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;迷宫-第四课广搜-中级班517编程普及组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#迷宫-第四课广搜-中级班517编程普及组&#34;&gt;#&lt;/a&gt; 迷宫 - 第四课：广搜 -【中级班】517 编程普及组&lt;/h1&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly81MTdjb2RpbmcuY29tL2NvbnRlc3QvcHJvYmxlbT9pZD00OTgmYW1wO3BpZD0xI3Byb2JsZW0tYW5jaG9y&#34;&gt;迷宫 - 第四课：广搜 -【中级班】517 编程普及组 &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;做法1-在队列中记录层的分界线&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#做法1-在队列中记录层的分界线&#34;&gt;#&lt;/a&gt; 做法 1 - 在队列中记录层的分界线&lt;/h2&gt;
+&lt;h3 id=&#34;思路&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#思路&#34;&gt;#&lt;/a&gt; 思路&lt;/h3&gt;
+&lt;p&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;ru&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.4306em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 记录当前层的最后一个节点，如果被访问到的节点 ==&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;ru&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.4306em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 说明这一层的所有节点都被访问到&lt;/p&gt;
+&lt;p&gt;也就说明了这一层的所有节点的子节点（&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;k+1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.7778em;vertical-align:-0.0833em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 层的所有节点）都已入队列，此时&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;ru&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.4306em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 应更新为队尾元素&lt;/p&gt;
+&lt;h3 id=&#34;易错点&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#易错点&#34;&gt;#&lt;/a&gt; 易错点&lt;/h3&gt;
+&lt;p&gt;如果&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;ru&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.4306em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 出现多次应该在最后一次出现时更新&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;ru&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.4306em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;即，在入栈的同时就标记被访问过（&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;a_{i,j}=1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.7167em;vertical-align:-0.2861em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.3117em;&#34;&gt;&lt;span style=&#34;top:-2.55em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mpunct mtight&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.2861em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.6444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;），不是访问到再标记！&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h3 id=&#34;代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#代码&#34;&gt;#&lt;/a&gt; 代码&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+
+int n,m;
+int a[1010][1010];
+int ans;
+int tx,ty;
+
+int X[4]=&amp;#123;1,-1,0,0&amp;#125;;
+int Y[4]=&amp;#123;0,0,1,-1&amp;#125;;
+
+struct zb &amp;#123;
+  int x;
+  int y;
+&amp;#125;;
+queue&amp;lt;zb&amp;gt;b;
+
+bool operator==(const zb &amp;amp;a,const zb &amp;amp;b) &amp;#123;
+  if(a.x==b.x&amp;amp;&amp;amp;a.y==b.y) &amp;#123;
+    return true;
+  &amp;#125;
+  return false;
+&amp;#125;
+
+void outzb(zb b) &amp;#123;
+  cout&amp;lt;&amp;lt;&amp;quot;x=&amp;quot;&amp;lt;&amp;lt;b.x&amp;lt;&amp;lt;&amp;quot; y=&amp;quot;&amp;lt;&amp;lt;b.y&amp;lt;&amp;lt;endl;
+  return;
+&amp;#125;
+
+void out(/*zb x*/) &amp;#123;
+  for(int i=1;i&amp;lt;=n;i++) &amp;#123;
+    for(int j=1;j&amp;lt;=m;j++) &amp;#123;
+      cout&amp;lt;&amp;lt;int(a[i][j]);
+    &amp;#125;
+    cout&amp;lt;&amp;lt;endl;
+  &amp;#125;
+  //cout&amp;lt;&amp;lt;&amp;quot;x=&amp;quot;&amp;lt;&amp;lt;x.x&amp;lt;&amp;lt;&amp;quot; y=&amp;quot;&amp;lt;&amp;lt;x.y;
+  cout&amp;lt;&amp;lt;&amp;quot;ans=&amp;quot;&amp;lt;&amp;lt;ans&amp;lt;&amp;lt;endl;
+  cout&amp;lt;&amp;lt;endl;
+&amp;#125;
+
+bool bfs(int x,int y) &amp;#123;
+  zb l,k,h;
+  int xx,yy;
+  l.x=x;l.y=y;
+  b.push(l);
+  zb ru=l;
+  while(!b.empty()) &amp;#123;
+    k=b.front();
+    b.pop();
+    if(k.x==tx&amp;amp;&amp;amp;k.y==ty) &amp;#123;
+      return true;
+    &amp;#125;
+    //out(k);
+    for(int i=0;i&amp;lt;4;i++) &amp;#123;
+      h.x=xx=k.x+X[i];
+      h.y=yy=k.y+Y[i];
+      if(xx&amp;lt;=0||xx&amp;gt;n||yy&amp;lt;=0||yy&amp;gt;m||a[xx][yy]==1);
+      else &amp;#123;
+        b.push(h);
+        a[xx][yy]=1;
+      &amp;#125;
+    &amp;#125;
+    if(k==ru) &amp;#123;
+      ru=b.back();
+      ans++;
+    &amp;#125;
+    //out();
+  &amp;#125;
+  return false;
+&amp;#125;
+
+int main() &amp;#123;
+  char c;
+  int x,y;
+  cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;m;
+  for(int i=1;i&amp;lt;=n;i++) &amp;#123;
+    for(int j=1;j&amp;lt;=m;j++) &amp;#123;
+      cin&amp;gt;&amp;gt;c;
+      if(c==&#39;S&#39;) &amp;#123;
+        x=i;
+        y=j;
+        a[i][j]=1;
+      &amp;#125; else if(c==&#39;T&#39;) &amp;#123;
+        tx=i;
+        ty=j;
+      &amp;#125; else if(c==&#39;#&#39;) &amp;#123;
+        a[i][j]=1;
+      &amp;#125;
+    &amp;#125;
+  &amp;#125;
+  if(bfs(x,y)) &amp;#123;
+    cout&amp;lt;&amp;lt;ans&amp;lt;&amp;lt;endl;
+  &amp;#125; else &amp;#123;
+    cout&amp;lt;&amp;lt;&amp;quot;-1&amp;quot;&amp;lt;&amp;lt;endl;
+  &amp;#125;
+  return 0;
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;做法2-数组记录每个节点的层数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#做法2-数组记录每个节点的层数&#34;&gt;#&lt;/a&gt; 做法 2 - 数组记录每个节点的层数&lt;/h2&gt;
+&lt;h3 id=&#34;思路-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#思路-2&#34;&gt;#&lt;/a&gt; 思路&lt;/h3&gt;
+&lt;p&gt;直接开数组 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;a_{i,j}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.7167em;vertical-align:-0.2861em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.3117em;&#34;&gt;&lt;span style=&#34;top:-2.55em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mpunct mtight&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.2861em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 来判断此时层数（墙记录 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;a_{i,j}=-1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.7167em;vertical-align:-0.2861em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.3117em;&#34;&gt;&lt;span style=&#34;top:-2.55em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mpunct mtight&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.2861em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.7278em;vertical-align:-0.0833em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; )&lt;/p&gt;
+&lt;h3 id=&#34;代码-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#代码-2&#34;&gt;#&lt;/a&gt; 代码&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+
+int n,m;
+int a[1010][1010];
+int tx,ty;
+
+int X[4]=&amp;#123;1,-1,0,0&amp;#125;;
+int Y[4]=&amp;#123;0,0,1,-1&amp;#125;;
+
+struct zb &amp;#123;
+  int x;
+  int y;
+&amp;#125;;
+queue&amp;lt;zb&amp;gt;b;
+
+bool operator==(const zb &amp;amp;a,const zb &amp;amp;b) &amp;#123;
+  if(a.x==b.x&amp;amp;&amp;amp;a.y==b.y) &amp;#123;
+    return true;
+  &amp;#125;
+  return false;
+&amp;#125;
+void outzb(zb b) &amp;#123;
+  cout&amp;lt;&amp;lt;&amp;quot;x=&amp;quot;&amp;lt;&amp;lt;b.x&amp;lt;&amp;lt;&amp;quot; y=&amp;quot;&amp;lt;&amp;lt;b.y&amp;lt;&amp;lt;endl;
+  return;
+&amp;#125;
+
+void out(zb x) &amp;#123;
+  for(int i=1;i&amp;lt;=n;i++) &amp;#123;
+    for(int j=1;j&amp;lt;=m;j++) &amp;#123;
+      cout&amp;lt;&amp;lt;int(a[i][j]);
+    &amp;#125;
+    cout&amp;lt;&amp;lt;endl;
+  &amp;#125;
+  cout&amp;lt;&amp;lt;&amp;quot;x=&amp;quot;&amp;lt;&amp;lt;x.x&amp;lt;&amp;lt;&amp;quot; y=&amp;quot;&amp;lt;&amp;lt;x.y&amp;lt;&amp;lt;endl;
+  cout&amp;lt;&amp;lt;endl;
+&amp;#125;
+
+bool bfs(int x,int y) &amp;#123;
+  zb l,k,h;
+  int xx,yy;
+  l.x=x;l.y=y;
+  b.push(l);
+  while(!b.empty()) &amp;#123;
+    k=b.front(); b.pop(); // 取出队首
+    if(k.x==tx&amp;amp;&amp;amp;k.y==ty) &amp;#123; // 找到终点
+      return true; //返回
+    &amp;#125;
+    //out(k);
+    for(int i=0;i&amp;lt;4;i++) &amp;#123; // 枚举上下左右
+      h.x=xx=k.x+X[i];
+      h.y=yy=k.y+Y[i];
+      if(xx&amp;lt;=0||xx&amp;gt;n||yy&amp;lt;=0||yy&amp;gt;m||a[xx][yy]!=0);
+      else &amp;#123;
+        b.push(h);
+        a[h.x][h.y]=a[k.x][k.y]+1;
+      &amp;#125;
+    &amp;#125;
+    //outzb(ru);
+    //cout&amp;lt;&amp;lt;endl;
+  &amp;#125;
+  return false;
+&amp;#125;
+
+int main() &amp;#123;
+  cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;m;
+  char c;
+  int x,y;
+  for(int i=1;i&amp;lt;=n;i++) &amp;#123;
+    for(int j=1;j&amp;lt;=m;j++) &amp;#123;
+      cin&amp;gt;&amp;gt;c;
+      if(c==&#39;S&#39;) &amp;#123;
+        x=i;
+        y=j;
+      &amp;#125; else if(c==&#39;T&#39;) &amp;#123;
+        tx=i;
+        ty=j;
+      &amp;#125; else if(c==&#39;#&#39;) &amp;#123;
+        a[i][j]=-1;
+      &amp;#125;
+    &amp;#125;
+  &amp;#125;
+  if(bfs(x,y)) &amp;#123;
+    cout&amp;lt;&amp;lt;a[tx][ty]&amp;lt;&amp;lt;endl;
+  &amp;#125; else &amp;#123;
+    cout&amp;lt;&amp;lt;&amp;quot;-1&amp;quot;&amp;lt;&amp;lt;endl;
+  &amp;#125;
+  return 0;
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

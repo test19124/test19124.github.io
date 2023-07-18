@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>test19124 • Posts by &#34;站点相关&#34; category</title>
+        <link>https://test19124.github.io</link>
+        <description>lzs的博客</description>
+        <language>zh-CN</language>
+        <pubDate>Sun, 16 Jul 2023 23:13:46 +0800</pubDate>
+        <lastBuildDate>Sun, 16 Jul 2023 23:13:46 +0800</lastBuildDate>
+        <category>517普及组</category>
+        <category>517提高组</category>
+        <category>About</category>
+        <category>写作素材</category>
+        <category>提纲</category>
+        <category>DEBUG</category>
+        <category>Friends</category>
+        <category>资料</category>
+        <category>Test</category>
+        <category>读后感</category>
+        <category>随笔</category>
+        <item>
+            <guid isPermalink="true">https://test19124.github.io/2023/07/16/friends/</guid>
+            <title>友情链接</title>
+            <link>https://test19124.github.io/2023/07/16/friends/</link>
+            <category>Friends</category>
+            <pubDate>Sun, 16 Jul 2023 23:13:46 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;如何添加友链&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#如何添加友链&#34;&gt;#&lt;/a&gt; 如何添加友链&lt;/h1&gt;
+&lt;p&gt;添加本站链接后，评论 / 向邮箱 &lt;code&gt;test19124@sina.com&lt;/code&gt;  发送如下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- site: #站点名称
+  owner: #管理员名字
+  url: #站点网址
+  desc: #简短描述
+  image: #一张图片
+  color: #颜色代码
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;友链列表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#友链列表&#34;&gt;#&lt;/a&gt; 友链列表&lt;/h1&gt;
+&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;Kaitaku&#34; style=&#34;--block-color:#00BFFF;&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly93d3cua2FpdGFrdS54eXo=&#34; data-background-image=&#34;https://www.kaitaku.xyz/assets/avatar.jpg&#34;&gt;&lt;/span&gt;
+          &lt;div class=&#34;info&#34;&gt;
+          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly93d3cua2FpdGFrdS54eXo=&#34;&gt;望月阁&lt;/span&gt;
+          &lt;p class=&#34;desc&#34;&gt;一个萌新的学习笔记&lt;/p&gt;
+          &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&#34;友链要求&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#友链要求&#34;&gt;#&lt;/a&gt; 友链要求&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;网站不能存在违反中国法律的内容&lt;/li&gt;
+&lt;li&gt;网站不能是纯广告性质 (本人主观判断) 的网站&lt;/li&gt;
+&lt;li&gt;网站不能存在大量令人不适的内容&lt;/li&gt;
+&lt;li&gt;不能是盗版资源 (或有争议的资源) 为主的资源站&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://test19124.github.io/2020/12/04/about/</guid>
+            <title>关于这个博客</title>
+            <link>https://test19124.github.io/2020/12/04/about/</link>
+            <category>About</category>
+            <pubDate>Fri, 04 Dec 2020 22:57:55 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;QwQ , 这是 test19124 的小博客&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img.paulzzh.tech/touhou/random&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">https://test19124.github.io/2019/09/19/hello-world/</guid>
+            <title>Hello World</title>
+            <link>https://test19124.github.io/2019/09/19/hello-world/</link>
+            <category>Test</category>
+            <pubDate>Thu, 19 Sep 2019 13:15:34 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;Welcome to &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvLw==&#34;&gt;Hexo&lt;/span&gt;! This is your very first post. Check &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mv&#34;&gt;documentation&lt;/span&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3MvdHJvdWJsZXNob290aW5nLmh0bWw=&#34;&gt;troubleshooting&lt;/span&gt; or you can ask me on &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL2lzc3Vlcw==&#34;&gt;GitHub&lt;/span&gt;.&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
+&lt;h3 id=&#34;create-a-new-post&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#create-a-new-post&#34;&gt;#&lt;/a&gt; Create a new post&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo new &lt;span class=&#34;token string&#34;&gt;&#34;My New Post&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvd3JpdGluZy5odG1s&#34;&gt;Writing&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;run-server&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#run-server&#34;&gt;#&lt;/a&gt; Run server&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo server&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvc2VydmVyLmh0bWw=&#34;&gt;Server&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;generate-static-files&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#generate-static-files&#34;&gt;#&lt;/a&gt; Generate static files&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo generate&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZ2VuZXJhdGluZy5odG1s&#34;&gt;Generating&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;deploy-to-remote-sites&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#deploy-to-remote-sites&#34;&gt;#&lt;/a&gt; Deploy to remote sites&lt;/h3&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo deploy&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudC5odG1s&#34;&gt;Deployment&lt;/span&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

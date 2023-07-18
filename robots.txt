@@ -1,0 +1,5 @@
+Disallow:https://test19124.github.io/sitemap.xml
+Disallow:https://test19124.github.io/sitemap.txt
+Disallow:https://test19124.github.io/baidusitemap.xml
+User-agent: *
+Disallow:

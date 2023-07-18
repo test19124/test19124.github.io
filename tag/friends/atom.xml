@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://test19124.github.io</id>
+    <title>test19124 • Posts by &#34;friends&#34; tag</title>
+    <link href="https://test19124.github.io" />
+    <updated>2023-07-16T15:13:46.000Z</updated>
+    <category term="517普及组" />
+    <category term="517提高组" />
+    <category term="About" />
+    <category term="写作素材" />
+    <category term="提纲" />
+    <category term="DEBUG" />
+    <category term="Friends" />
+    <category term="资料" />
+    <category term="Test" />
+    <category term="读后感" />
+    <category term="随笔" />
+    <entry>
+        <id>https://test19124.github.io/2023/07/16/friends/</id>
+        <title>友情链接</title>
+        <link rel="alternate" href="https://test19124.github.io/2023/07/16/friends/"/>
+        <content type="html">&lt;h1 id=&#34;如何添加友链&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#如何添加友链&#34;&gt;#&lt;/a&gt; 如何添加友链&lt;/h1&gt;
+&lt;p&gt;添加本站链接后，评论 / 向邮箱 &lt;code&gt;test19124@sina.com&lt;/code&gt;  发送如下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- site: #站点名称
+  owner: #管理员名字
+  url: #站点网址
+  desc: #简短描述
+  image: #一张图片
+  color: #颜色代码
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;友链列表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#友链列表&#34;&gt;#&lt;/a&gt; 友链列表&lt;/h1&gt;
+&lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;Kaitaku&#34; style=&#34;--block-color:#00BFFF;&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly93d3cua2FpdGFrdS54eXo=&#34; data-background-image=&#34;https://www.kaitaku.xyz/assets/avatar.jpg&#34;&gt;&lt;/span&gt;
+          &lt;div class=&#34;info&#34;&gt;
+          &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly93d3cua2FpdGFrdS54eXo=&#34;&gt;望月阁&lt;/span&gt;
+          &lt;p class=&#34;desc&#34;&gt;一个萌新的学习笔记&lt;/p&gt;
+          &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&#34;友链要求&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#友链要求&#34;&gt;#&lt;/a&gt; 友链要求&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;网站不能存在违反中国法律的内容&lt;/li&gt;
+&lt;li&gt;网站不能是纯广告性质 (本人主观判断) 的网站&lt;/li&gt;
+&lt;li&gt;网站不能存在大量令人不适的内容&lt;/li&gt;
+&lt;li&gt;不能是盗版资源 (或有争议的资源) 为主的资源站&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="Friends" />
+        <updated>2023-07-16T15:13:46.000Z</updated>
+    </entry>
+</feed>

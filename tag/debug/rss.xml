@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>test19124 • Posts by &#34;debug&#34; tag</title>
+        <link>https://test19124.github.io</link>
+        <description>lzs的博客</description>
+        <language>zh-CN</language>
+        <pubDate>Mon, 09 Aug 2021 20:02:42 +0800</pubDate>
+        <lastBuildDate>Mon, 09 Aug 2021 20:02:42 +0800</lastBuildDate>
+        <category>517普及组</category>
+        <category>517提高组</category>
+        <category>About</category>
+        <category>写作素材</category>
+        <category>提纲</category>
+        <category>DEBUG</category>
+        <category>Friends</category>
+        <category>资料</category>
+        <category>Test</category>
+        <category>读后感</category>
+        <category>随笔</category>
+        <item>
+            <guid isPermalink="true">https://test19124.github.io/2021/08/09/debug-de-fang-fa-ji-ce-lue/</guid>
+            <title>debug的方法及策略</title>
+            <link>https://test19124.github.io/2021/08/09/debug-de-fang-fa-ji-ce-lue/</link>
+            <category>DEBUG</category>
+            <pubDate>Mon, 09 Aug 2021 20:02:42 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;C++ 以及普及组选手多使用静态查错法与输出调试法&lt;/p&gt;
+&lt;p&gt;提高组选手可以适当使用对拍调试法&lt;/p&gt;
+&lt;p&gt;[&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMXNRNHkxSzdUNC8=&#34;&gt;https://www.bilibili.com/video/BV1sQ4y1K7T4/&lt;/span&gt; 初级调试指南视频版]&lt;/p&gt;
+&lt;p&gt;[&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMWhlNDExcDc0WS8=&#34;&gt;https://www.bilibili.com/video/BV1he411p74Y/&lt;/span&gt; 高级调试指南视频版]&lt;/p&gt;
+&lt;p&gt;= 调试指南 =&lt;/p&gt;
+&lt;p&gt;1：在草稿纸上模拟程序的运行，写下一些关键变量的中间结果&lt;/p&gt;
+&lt;p&gt;2：利用打印调试法打印出这些中间变量的值&lt;/p&gt;
+&lt;p&gt;3：对比观察&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;下面介绍利用数据去查错的几种查错方法&lt;/p&gt;
+&lt;p&gt;== 静态查错法 ==&lt;/p&gt;
+&lt;p&gt;静态查错法的意思是说，写完程序，先整体浏览一遍代码，把一些肉眼可见的，明显发现是错的地方修改掉&lt;/p&gt;
+&lt;p&gt;根据以往的经验，我们发现，一个选手功力越深，静态查错的时候能发现的问题越多，往往大多数错误不需要下面的方法就已经查出来了。&lt;/p&gt;
+&lt;p&gt;== 输出调试法 ==&lt;/p&gt;
+&lt;p&gt;首先，我们运行了一组数据，发现结果不对，然后静态查错也没看出什么来，这个时候我们采用输出调试法。&lt;/p&gt;
+&lt;p&gt;1：先 分段  打印一些变量，观察变量的值跟预想的对不对，找到最先不对的地方，然后检查，这个时候下面的代码就不用看了&lt;/p&gt;
+&lt;p&gt;2：不停的重复 1 的行为，不断的缩小定位错误区域，直到所有的错误修复完毕&lt;/p&gt;
+&lt;p&gt;举个例子&lt;/p&gt;
+&lt;p&gt;比如下面这个程序，题库链接：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly81MTdjb2RpbmcuY29tL3AvMTEwMA==&#34;&gt;https://517coding.com/p/1100&lt;/span&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+int a[10010];
+int b[10010];
+int main(void)&amp;#123;
+	int n,m;
+	int k=-1e9;
+	scanf(&amp;quot;%d%d&amp;quot;,&amp;amp;n,&amp;amp;m);
+	for(int i=1;i&amp;lt;=n;i++) scanf(&amp;quot;%d&amp;quot;,&amp;amp;a[i]);
+	for(int i=1;i&amp;lt;=m;i++) scanf(&amp;quot;%d&amp;quot;,&amp;amp;b[i]);
+	for(int i=1;i&amp;lt;=n;i++) &amp;#123;
+		for(int j=1;j&amp;lt;=n;j++) &amp;#123;
+		    
+			if(a[i]+b[j]&amp;gt;k) &amp;#123; 
+		//下面这行代码是用来打印调试的语句
+			     printf(&amp;quot;i=%d j=%d sum=%d\n&amp;quot;, i, j, a[i]+b[j]);
+			     k=a[i]+b[j];
+			&amp;#125;
+		&amp;#125;
+       &amp;#125;
+	printf(&amp;quot;%d&amp;quot;,k);
+	return 0;
+&amp;#125;
+
+/*
+错误数据：
+
+2 3
+1 2
+1 2 3
+*/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们可以在循环里面加一句 printf 语句打印关键信息，然后运行代码下方的错误数据，我们发现会输出如下信息&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;2 3
+1 2
+1 2 3
+i=1 j=1 sum=2
+i=1 j=2 sum=3
+i=2 j=2 sum=4
+4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以发现，答案明明是 5，但是却输出了 4，而且中间过程也并没有产生 5，而答案 5 是来自于第一个数组中的 2 与第二个数组中的 3 相加得到的，此时我们通过调试信息的输出并没有发现这两个数被同时枚举到，于是我们检查两个 for 循环，这个时候发现了两个 for 循环枚举的都是 1 到 n，而实际上，第二个循环应该枚举 1 到 m，修改之后，这个程序就可以正常通过了&lt;/p&gt;
+&lt;p&gt;== 对拍调试法 ==&lt;/p&gt;
+&lt;p&gt;=== &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2R1aXBhaS5zaA==&#34;&gt;duipai.sh&lt;/span&gt; ===&lt;/p&gt;
+&lt;figure class=&#34;highlight sh&#34;&gt;&lt;figcaption data-lang=&#34;sh&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token shebang important&#34;&gt;#!/bin/bash&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token assign-left variable&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;token boolean&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;do&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token builtin class-name&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;t = &lt;span class=&#34;token variable&#34;&gt;$t&lt;/span&gt; + 1&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token builtin class-name&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;$t&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token builtin class-name&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;:&lt;span class=&#34;token entity&#34; title=&#34;\n&#34;&gt;\n&lt;/span&gt;&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    ./rand &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; rand.txt&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    ./AC &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; rand.txt &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; AC.out&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    ./WA &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt; rand.txt &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; WA.out&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;diff&lt;/span&gt; AC.out WA.out&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;then&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token builtin class-name&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;&lt;span class=&#34;token entity&#34; title=&#34;\n&#34;&gt;\n&lt;/span&gt;&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token builtin class-name&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;WA&lt;span class=&#34;token entity&#34; title=&#34;\n&#34;&gt;\n&lt;/span&gt;&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token function&#34;&gt;cat&lt;/span&gt; rand.txt&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;        &lt;span class=&#34;token builtin class-name&#34;&gt;break&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;    &lt;span class=&#34;token keyword&#34;&gt;fi&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;done&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;=== run.bat ===&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bat&#34;&gt;:loop 
+    @echo off   
+    gen.exe &amp;gt; in.txt                     
+    my.exe &amp;lt; in.txt  &amp;gt; myout.txt     
+    std.exe &amp;lt; in.txt  &amp;gt; stdout.txt
+    fc myout.txt stdout.txt              
+if not errorlevel 1   goto loop         
+pause
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;=== std.cpp ===&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+
+int main() &amp;#123;
+  int a, b;
+  cin &amp;gt;&amp;gt; a &amp;gt;&amp;gt; b;
+  cout &amp;lt;&amp;lt; a + b &amp;lt;&amp;lt; endl;
+  return 0;
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;=== my.cpp ===&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+
+//这是一个错误程序
+int main() &amp;#123;
+  int a, b;
+  cin &amp;gt;&amp;gt; a &amp;gt;&amp;gt;b;
+  if (a &amp;gt; 130 &amp;amp;&amp;amp; b &amp;gt; 130) &amp;#123;
+    cout &amp;lt;&amp;lt; a - b &amp;lt;&amp;lt; endl;
+  &amp;#125; else &amp;#123;
+    cout &amp;lt;&amp;lt; a + b &amp;lt;&amp;lt; endl;
+  &amp;#125;
+  return 0;
+&amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;=== gen.cpp ===&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+
+// 返回0到x-1之间的随机数
+// rand()函数返回 0-32767之间的一个随机数
+int get_rand(int x) &amp;#123;
+  return rand() * rand() % x + 1;
+&amp;#125;
+
+//返回L 到 R之间的整数
+int get_rand(int L, int R) &amp;#123;
+  return rand() * rand() % (R-L+1) + L;
+&amp;#125;
+
+int main() &amp;#123;
+  //初始化随机种子
+  srand(time(0));
+  int a, b;
+
+  //生成一组随机数据
+  a = get_rand(1, 200);
+  b = get_rand(1, 200);
+  cout &amp;lt;&amp;lt; a &amp;lt;&amp;lt; &amp;quot; &amp;quot; &amp;lt;&amp;lt; b &amp;lt;&amp;lt;endl;
+  return 0;
+&amp;#125;
+
+&lt;/code&gt;&lt;/pre&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
