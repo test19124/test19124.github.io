@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://test19124.github.io/2023/07/16/friends/</loc>
+    
+    <lastmod>2023-07-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://test19124.github.io/2021/08/07/517-an-niu-bian-se-ti-jie/</loc>
     
     <lastmod>2023-07-18</lastmod>
@@ -147,15 +156,6 @@
   
   <url>
     <loc>https://test19124.github.io/2021/05/01/du-shu-zhuan-ti-zheng-li/</loc>
-    
-    <lastmod>2023-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://test19124.github.io/2023/07/16/friends/</loc>
     
     <lastmod>2023-07-18</lastmod>
     
@@ -362,14 +362,14 @@
 
   
   <url>
-    <loc>https://test19124.github.io/tags/517%E6%99%AE%E5%8F%8A%E7%BB%84/</loc>
+    <loc>https://test19124.github.io/tags/517%E6%8F%90%E9%AB%98%E7%BB%84/</loc>
     <lastmod>2023-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://test19124.github.io/tags/517%E6%8F%90%E9%AB%98%E7%BB%84/</loc>
+    <loc>https://test19124.github.io/tags/517%E6%99%AE%E5%8F%8A%E7%BB%84/</loc>
     <lastmod>2023-07-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
