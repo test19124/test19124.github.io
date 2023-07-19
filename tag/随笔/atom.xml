@@ -8,19 +8,19 @@
     <category term="517普及组" />
     <category term="About" />
     <category term="写作素材" />
+    <category term="语文" />
+    <category term="错题" />
+    <category term="数学" />
+    <category term="物理" />
+    <category term="记叙文" />
     <category term="提纲" />
     <category term="DEBUG" />
     <category term="Friends" />
     <category term="资料" />
     <category term="Test" />
     <category term="读后感" />
-    <category term="随笔" />
-    <category term="物理" />
-    <category term="错题" />
-    <category term="语文" />
-    <category term="数学" />
-    <category term="记叙文" />
     <category term="议论文" />
+    <category term="随笔" />
     <entry>
         <id>https://test19124.github.io/2023/01/27/zhe-ke-neng-zhen-de-hui-fa-sheng/</id>
         <title>迷</title>
@@ -29,8 +29,8 @@
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;p&gt;风刮过，卷起了几片落叶，中有人影&lt;/p&gt;
 </content>
-        <category term="随笔" />
         <category term="语文" />
+        <category term="随笔" />
         <updated>2023-01-27T10:10:54.000Z</updated>
     </entry>
     <entry>
@@ -45,8 +45,8 @@
 朋友，或形同陌路，或改变目标随波逐流，或目标坚定别无所求。&lt;/p&gt;
 &lt;/blockquote&gt;
 </content>
-        <category term="随笔" />
         <category term="语文" />
+        <category term="随笔" />
         <updated>2022-08-06T12:53:45.000Z</updated>
     </entry>
 </feed>

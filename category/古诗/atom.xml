@@ -8,19 +8,19 @@
     <category term="517普及组" />
     <category term="About" />
     <category term="写作素材" />
+    <category term="语文" />
+    <category term="错题" />
+    <category term="数学" />
+    <category term="物理" />
+    <category term="记叙文" />
     <category term="提纲" />
     <category term="DEBUG" />
     <category term="Friends" />
     <category term="资料" />
     <category term="Test" />
     <category term="读后感" />
-    <category term="随笔" />
-    <category term="物理" />
-    <category term="错题" />
-    <category term="语文" />
-    <category term="数学" />
-    <category term="记叙文" />
     <category term="议论文" />
+    <category term="随笔" />
     <entry>
         <id>https://test19124.github.io/2023/07/15/gao-yi-15-shou-gu-shi/</id>
         <title>高一15首古诗</title>
@@ -30,8 +30,8 @@
     您的浏览器不支持预览PDF &lt;a href=&#34;https://test19124.github.io/file/高一语文15首古诗.pdf&#34;&gt;【点此下载PDF】&lt;/a&gt;
 &lt;/iframe&gt;
 </content>
-        <category term="资料" />
         <category term="语文" />
+        <category term="资料" />
         <updated>2023-07-15T10:19:46.000Z</updated>
     </entry>
     <entry>
@@ -176,8 +176,8 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 </content>
-        <category term="资料" />
         <category term="语文" />
+        <category term="资料" />
         <updated>2023-04-04T14:34:24.000Z</updated>
     </entry>
 </feed>

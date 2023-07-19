@@ -417,6 +417,41 @@
   </url>
   
   <url>
+    <loc>https://test19124.github.io/tags/%E8%AF%AD%E6%96%87/</loc>
+    <lastmod>2023-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://test19124.github.io/tags/%E9%94%99%E9%A2%98/</loc>
+    <lastmod>2023-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://test19124.github.io/tags/%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2023-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://test19124.github.io/tags/%E7%89%A9%E7%90%86/</loc>
+    <lastmod>2023-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://test19124.github.io/tags/%E8%AE%B0%E5%8F%99%E6%96%87/</loc>
+    <lastmod>2023-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://test19124.github.io/tags/%E6%8F%90%E7%BA%B2/</loc>
     <lastmod>2023-07-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -459,49 +494,14 @@
   </url>
   
   <url>
-    <loc>https://test19124.github.io/tags/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2023-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://test19124.github.io/tags/%E7%89%A9%E7%90%86/</loc>
-    <lastmod>2023-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://test19124.github.io/tags/%E9%94%99%E9%A2%98/</loc>
-    <lastmod>2023-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://test19124.github.io/tags/%E8%AF%AD%E6%96%87/</loc>
-    <lastmod>2023-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://test19124.github.io/tags/%E6%95%B0%E5%AD%A6/</loc>
-    <lastmod>2023-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://test19124.github.io/tags/%E8%AE%B0%E5%8F%99%E6%96%87/</loc>
-    <lastmod>2023-07-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://test19124.github.io/tags/%E8%AE%AE%E8%AE%BA%E6%96%87/</loc>
+    <lastmod>2023-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://test19124.github.io/tags/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2023-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -545,14 +545,14 @@
   </url>
   
   <url>
-    <loc>https://test19124.github.io/categories/%E5%AD%A6%E4%B9%A0/%E7%A4%BE%E4%BC%9A/</loc>
+    <loc>https://test19124.github.io/categories/%E5%AD%A6%E4%B9%A0/%E9%94%99%E9%A2%98/</loc>
     <lastmod>2023-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://test19124.github.io/categories/%E5%AD%A6%E4%B9%A0/%E8%AF%AD%E6%96%87/%E4%BD%9C%E6%96%87/</loc>
+    <loc>https://test19124.github.io/categories/%E5%AD%A6%E4%B9%A0/%E7%A4%BE%E4%BC%9A/</loc>
     <lastmod>2023-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -566,14 +566,14 @@
   </url>
   
   <url>
-    <loc>https://test19124.github.io/categories/%E5%AD%A6%E4%B9%A0/%E8%AF%AD%E6%96%87/%E5%8F%A4%E8%AF%97/</loc>
+    <loc>https://test19124.github.io/categories/%E5%AD%A6%E4%B9%A0/%E8%AF%AD%E6%96%87/%E4%BD%9C%E6%96%87/</loc>
     <lastmod>2023-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://test19124.github.io/categories/%E5%AD%A6%E4%B9%A0/%E9%94%99%E9%A2%98/</loc>
+    <loc>https://test19124.github.io/categories/%E5%AD%A6%E4%B9%A0/%E8%AF%AD%E6%96%87/%E5%8F%A4%E8%AF%97/</loc>
     <lastmod>2023-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
