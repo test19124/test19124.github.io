@@ -17,6 +17,10 @@
     <category term="随笔" />
     <category term="物理" />
     <category term="错题" />
+    <category term="语文" />
+    <category term="数学" />
+    <category term="记叙文" />
+    <category term="议论文" />
     <entry>
         <id>https://test19124.github.io/2023/01/27/zhe-ke-neng-zhen-de-hui-fa-sheng/</id>
         <title>迷</title>
@@ -26,6 +30,7 @@
 &lt;p&gt;风刮过，卷起了几片落叶，中有人影&lt;/p&gt;
 </content>
         <category term="随笔" />
+        <category term="语文" />
         <updated>2023-01-27T10:10:54.000Z</updated>
     </entry>
     <entry>
@@ -41,6 +46,7 @@
 &lt;/blockquote&gt;
 </content>
         <category term="随笔" />
+        <category term="语文" />
         <updated>2022-08-06T12:53:45.000Z</updated>
     </entry>
 </feed>
