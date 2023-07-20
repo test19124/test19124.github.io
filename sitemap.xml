@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://test19124.github.io/2023/07/20/shu-xue-cuo-ti/</loc>
+    
+    <lastmod>2023-07-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://test19124.github.io/2023/07/19/wu-li-cuo-ti/</loc>
     
     <lastmod>2023-07-20</lastmod>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>https://test19124.github.io/2023/07/20/wu-li-zheng-li/</loc>
-    
-    <lastmod>2023-07-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://test19124.github.io/2023/07/20/shu-xue-cuo-ti/</loc>
     
     <lastmod>2023-07-20</lastmod>
     
