@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://test19124.github.io/2023/07/20/cuo-ti-shu-xue/</loc>
+    <loc>https://test19124.github.io/2023/07/20/wu-li-zheng-li/</loc>
     
     <lastmod>2023-07-20</lastmod>
     
@@ -11,7 +11,25 @@
   </url>
   
   <url>
-    <loc>https://test19124.github.io/2023/07/19/cuo-ti-wu-li/</loc>
+    <loc>https://test19124.github.io/2023/07/19/wu-li-cuo-ti/</loc>
+    
+    <lastmod>2023-07-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://test19124.github.io/2023/07/20/shu-xue-cuo-ti/</loc>
+    
+    <lastmod>2023-07-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://test19124.github.io/2023/07/20/ying-yu-zheng-li/</loc>
     
     <lastmod>2023-07-20</lastmod>
     
@@ -507,6 +525,20 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://test19124.github.io/tags/%E6%95%B4%E7%90%86/</loc>
+    <lastmod>2023-07-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://test19124.github.io/tags/%E8%8B%B1%E8%AF%AD/</loc>
+    <lastmod>2023-07-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -545,13 +577,6 @@
   </url>
   
   <url>
-    <loc>https://test19124.github.io/categories/%E5%AD%A6%E4%B9%A0/%E9%94%99%E9%A2%98/</loc>
-    <lastmod>2023-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://test19124.github.io/categories/%E5%AD%A6%E4%B9%A0/%E7%A4%BE%E4%BC%9A/</loc>
     <lastmod>2023-07-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -574,6 +599,27 @@
   
   <url>
     <loc>https://test19124.github.io/categories/%E5%AD%A6%E4%B9%A0/%E8%AF%AD%E6%96%87/%E5%8F%A4%E8%AF%97/</loc>
+    <lastmod>2023-07-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://test19124.github.io/categories/%E5%AD%A6%E4%B9%A0/%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2023-07-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://test19124.github.io/categories/%E5%AD%A6%E4%B9%A0/%E7%89%A9%E7%90%86/</loc>
+    <lastmod>2023-07-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://test19124.github.io/categories/%E5%AD%A6%E4%B9%A0/%E8%8B%B1%E8%AF%AD/</loc>
     <lastmod>2023-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

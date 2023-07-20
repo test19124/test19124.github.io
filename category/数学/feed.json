@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "test19124 • All posts by \"数学\" category",
+    "description": "lzs的博客",
+    "home_page_url": "https://test19124.github.io",
+    "items": [
+        {
+            "id": "https://test19124.github.io/2023/07/20/shu-xue-cuo-ti/",
+            "url": "https://test19124.github.io/2023/07/20/shu-xue-cuo-ti/",
+            "title": "数学错题",
+            "date_published": "2023-07-19T16:20:11.000Z",
+            "content_html": "<h2 id=\"全称量词与存在量词\"><a class=\"markdownIt-Anchor\" href=\"#全称量词与存在量词\">#</a> 全称量词与存在量词</h2>\n<blockquote>\n<img data-src=\"\\img\\posts\\cuo-ti-shu-xue\\屏幕截图 2023-07-20 002425.png\" />\n</blockquote>\n<blockquote>\n<img data-src=\"\\img\\posts\\cuo-ti-shu-xue\\屏幕截图 2023-07-20 002735.png\" />\n</blockquote>\n<blockquote>\n<img data-src=\"\\img\\posts\\cuo-ti-shu-xue\\屏幕截图 2023-07-20 002756.png\" />\n</blockquote>\n<blockquote>\n<img data-src=\"\\img\\posts\\cuo-ti-shu-xue\\屏幕截图 2023-07-20 002820.png\" />\n</blockquote>\n<blockquote>\n<img data-src=\"\\img\\posts\\cuo-ti-shu-xue\\屏幕截图 2023-07-20 002943.png\" />\n</blockquote>\n<blockquote>\n<img data-src=\"\\img\\posts\\cuo-ti-shu-xue\\屏幕截图 2023-07-20 002952.png\" />\n</blockquote>\n",
+            "tags": [
+                "错题",
+                "数学"
+            ]
+        }
+    ]
+}
