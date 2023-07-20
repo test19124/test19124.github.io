@@ -5,6 +5,17 @@
     "home_page_url": "https://test19124.github.io",
     "items": [
         {
+            "id": "https://test19124.github.io/2023/07/20/hua-xue-zheng-li/",
+            "url": "https://test19124.github.io/2023/07/20/hua-xue-zheng-li/",
+            "title": "化学整理",
+            "date_published": "2023-07-20T07:34:00.000Z",
+            "content_html": "<h2 id=\"氧化还原反应\"><a class=\"markdownIt-Anchor\" href=\"#氧化还原反应\">#</a> 氧化还原反应</h2>\n<h3 id=\"概念\"><a class=\"markdownIt-Anchor\" href=\"#概念\">#</a> 概念</h3>\n<blockquote>\n<p><img data-src=\"/img/posts/hua-xue-zheng-li/image.png\" alt=\"归纳小结\"></p>\n</blockquote>\n<p><img data-src=\"/img/posts/hua-xue-zheng-li/image-1.png\" alt=\"\"></p>\n<h3 id=\"氧化还原反应与四种基本类型的关系\"><a class=\"markdownIt-Anchor\" href=\"#氧化还原反应与四种基本类型的关系\">#</a> 氧化还原反应与四种基本类型的关系</h3>\n<table>\n<thead>\n<tr>\n<th style=\"text-align:center\">-</th>\n<th style=\"text-align:center\">置换反应</th>\n<th style=\"text-align:center\">分解反应</th>\n<th style=\"text-align:center\">复分解反应</th>\n<th style=\"text-align:center\">化合反应</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align:center\"><strong>氧化还原反应</strong></td>\n<td style=\"text-align:center\">√</td>\n<td style=\"text-align:center\">√</td>\n<td style=\"text-align:center\">-</td>\n<td style=\"text-align:center\">√</td>\n</tr>\n<tr>\n<td style=\"text-align:center\"><strong>非氧化还原反应</strong></td>\n<td style=\"text-align:center\">-</td>\n<td style=\"text-align:center\">√</td>\n<td style=\"text-align:center\">√</td>\n<td style=\"text-align:center\">√</td>\n</tr>\n</tbody>\n</table>\n<p>有单质参加或生成的反应，一定是氧化还原反应？<strong>×</strong></p>\n<p>有单质参加或生成的置换反应，一定是氧化还原反应？<strong>√</strong></p>\n<p><img data-src=\"/img/posts/hua-xue-zheng-li/image-2.png\" alt=\"素养升华\"></p>\n",
+            "tags": [
+                "整理",
+                "化学"
+            ]
+        },
+        {
             "id": "https://test19124.github.io/2023/07/20/wu-li-zheng-li/",
             "url": "https://test19124.github.io/2023/07/20/wu-li-zheng-li/",
             "title": "物理整理",
@@ -13,17 +24,6 @@
             "tags": [
                 "物理",
                 "整理"
-            ]
-        },
-        {
-            "id": "https://test19124.github.io/2023/07/20/ying-yu-zheng-li/",
-            "url": "https://test19124.github.io/2023/07/20/ying-yu-zheng-li/",
-            "title": "英语整理",
-            "date_published": "2023-07-20T02:55:00.000Z",
-            "content_html": "<h2 id=\"语言点-好词组\"><a class=\"markdownIt-Anchor\" href=\"#语言点-好词组\">#</a> 语言点 - 好词组</h2>\n<ol>\n<li><code>falsh into my mind</code></li>\n</ol>\n",
-            "tags": [
-                "整理",
-                "英语"
             ]
         }
     ]

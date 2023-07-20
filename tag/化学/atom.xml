@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://test19124.github.io</id>
+    <title>test19124 • Posts by &#34;化学&#34; tag</title>
+    <link href="https://test19124.github.io" />
+    <updated>2023-07-20T07:34:00.000Z</updated>
+    <category term="517提高组" />
+    <category term="517普及组" />
+    <category term="About" />
+    <category term="写作素材" />
+    <category term="语文" />
+    <category term="错题" />
+    <category term="数学" />
+    <category term="物理" />
+    <category term="记叙文" />
+    <category term="提纲" />
+    <category term="DEBUG" />
+    <category term="Friends" />
+    <category term="资料" />
+    <category term="Test" />
+    <category term="读后感" />
+    <category term="议论文" />
+    <category term="随笔" />
+    <category term="整理" />
+    <category term="化学" />
+    <entry>
+        <id>https://test19124.github.io/2023/07/20/hua-xue-zheng-li/</id>
+        <title>化学整理</title>
+        <link rel="alternate" href="https://test19124.github.io/2023/07/20/hua-xue-zheng-li/"/>
+        <content type="html">&lt;h2 id=&#34;氧化还原反应&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#氧化还原反应&#34;&gt;#&lt;/a&gt; 氧化还原反应&lt;/h2&gt;
+&lt;h3 id=&#34;概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img data-src=&#34;/img/posts/hua-xue-zheng-li/image.png&#34; alt=&#34;归纳小结&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img data-src=&#34;/img/posts/hua-xue-zheng-li/image-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;氧化还原反应与四种基本类型的关系&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#氧化还原反应与四种基本类型的关系&#34;&gt;#&lt;/a&gt; 氧化还原反应与四种基本类型的关系&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;-&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;置换反应&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;分解反应&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;复分解反应&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;化合反应&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;氧化还原反应&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;√&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;√&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;strong&gt;非氧化还原反应&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;√&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;√&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;√&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;有单质参加或生成的反应，一定是氧化还原反应？&lt;strong&gt;×&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;有单质参加或生成的置换反应，一定是氧化还原反应？&lt;strong&gt;√&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;/img/posts/hua-xue-zheng-li/image-2.png&#34; alt=&#34;素养升华&#34;&gt;&lt;/p&gt;
+</content>
+        <category term="整理" />
+        <category term="化学" />
+        <updated>2023-07-20T07:34:00.000Z</updated>
+    </entry>
+</feed>
