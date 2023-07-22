@@ -265,16 +265,15 @@
         <id>https://test19124.github.io/2023/07/16/friends/</id>
         <title>友情链接</title>
         <link rel="alternate" href="https://test19124.github.io/2023/07/16/friends/"/>
-        <content type="html">&lt;h1 id=&#34;如何添加友链&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#如何添加友链&#34;&gt;#&lt;/a&gt; 如何添加友链&lt;/h1&gt;
-&lt;p&gt;添加本站链接后，评论 / 向邮箱 &lt;code&gt;test19124@sina.com&lt;/code&gt;  发送如下内容：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- site: #站点名称
-  owner: #管理员名字
-  url: #站点网址
-  desc: #简短描述
-  image: #一张图片
-  color: #颜色代码
+        <content type="html">&lt;h2 id=&#34;新要认识的同学们&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#新要认识的同学们&#34;&gt;#&lt;/a&gt; 新要认识的同学们&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;Q: 李梓硕(01) 有谁交朋友吗?
+万晓敏(01) 2023-07-22 10:19:18 有
+陈正楠(01) 2023-07-22 10:19:16 来来来
+吴怀恩(03) 2023-07-22 10:19:18 来来
+林俊辉(03) 2023-07-22 10:19:20 来来
+兰静茹(04) 2023-07-22 10:19:13 我我我
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h1 id=&#34;友链列表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#友链列表&#34;&gt;#&lt;/a&gt; 友链列表&lt;/h1&gt;
+&lt;h2 id=&#34;友链列表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#友链列表&#34;&gt;#&lt;/a&gt; 友链列表&lt;/h2&gt;
 &lt;div class=&#34;links&#34;&gt;&lt;div class=&#34;item&#34; title=&#34;Kaitaku&#34; style=&#34;--block-color:#00BFFF;&#34;&gt;&lt;span class=&#34;exturl image&#34; data-url=&#34;aHR0cHM6Ly93d3cua2FpdGFrdS54eXo=&#34; data-background-image=&#34;https://www.kaitaku.xyz/assets/avatar.jpg&#34;&gt;&lt;/span&gt;
           &lt;div class=&#34;info&#34;&gt;
           &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly93d3cua2FpdGFrdS54eXo=&#34;&gt;望月阁&lt;/span&gt;
@@ -284,7 +283,16 @@
           &lt;span class=&#34;exturl title&#34; data-url=&#34;aHR0cHM6Ly93d3cuc3ByZW5lZGF5Zi5jb20v&#34;&gt;永恒绿洲&lt;/span&gt;
           &lt;p class=&#34;desc&#34;&gt;虽然不容易，只要去做，就能成功&lt;/p&gt;
           &lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h1 id=&#34;友链要求&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#友链要求&#34;&gt;#&lt;/a&gt; 友链要求&lt;/h1&gt;
+&lt;h2 id=&#34;如何添加友链&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#如何添加友链&#34;&gt;#&lt;/a&gt; 如何添加友链&lt;/h2&gt;
+&lt;p&gt;添加本站链接后，评论 / 向邮箱 &lt;code&gt;test19124@sina.com&lt;/code&gt;  发送如下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- site: #站点名称
+  owner: #管理员名字
+  url: #站点网址
+  desc: #简短描述
+  image: #一张图片
+  color: #颜色代码
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;友链要求&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#友链要求&#34;&gt;#&lt;/a&gt; 友链要求&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;网站不能存在违反中国法律的内容&lt;/li&gt;
 &lt;li&gt;网站不能是纯广告性质 (本人主观判断) 的网站&lt;/li&gt;
